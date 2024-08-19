@@ -1,0 +1,30 @@
+$step: 2;
+@for $i from 0 through 24 {
+  .p-#{$i} {
+    padding: calc(#{$i}rem / $step);
+  }
+
+  .pt-#{$i} {
+    padding-top: calc(#{$i}rem / $step);
+  }
+
+  .pb-#{$i} {
+    padding-bottom: calc(#{$i}rem / $step);
+  }
+
+  .pl-#{$i} {
+    padding-left: calc(#{$i}rem / $step);
+  }
+
+  .pr-#{$i} {
+    padding-right: calc(#{$i}rem / $step);
+  }
+
+  .px-#{$i} {
+    padding-inline: calc(#{$i}rem / $step);
+  }
+
+  .py-#{$i} {
+    padding-block: calc(#{$i}rem / $step);
+  }
+}

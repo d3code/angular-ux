@@ -1,0 +1,49 @@
+// ----------------------------------------------
+
+:root {
+  --color-link:  var(--color-grey-5);
+  --color-link-hover:  var(--color-grey-6);
+}
+
+[data-theme-color=dark] {
+  --color-link:  var(--color-grey-6);
+  --color-link-hover:  var(--color-grey-3);
+}
+
+// ----------------------------------------------
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-link);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+
+a {
+  text-decoration: none;
+  /* Remove the gray background on active links in IE 10 */
+  background-color: transparent;
+  /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
+  -webkit-text-decoration-skip: objects;
+}
+
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}

@@ -1,0 +1,22 @@
+
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+
+ul {
+  padding: 1rem 2rem;
+  margin: 0;
+}

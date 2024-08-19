@@ -1,0 +1,15 @@
+
+
+fieldset {
+  /*
+  Reset to ensure fieldsets behave more like a standard block element
+  - https://github.com/twbs/bootstrap/issues/12359
+  - https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+  */
+  min-width: 0;
+
+  /* Reset the default outline behavior of fieldsets so they don't affect page layout. */
+  padding: 0;
+  margin: 0;
+  border: 0;
+}

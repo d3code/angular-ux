@@ -1,0 +1,32 @@
+// ----------------------------------------------
+
+:root {
+  --color-link:  var(--color-grey-5);
+  --color-link-hover:  var(--color-grey-6);
+}
+
+[data-theme-color=dark] {
+  --color-link:  var(--color-grey-6);
+  --color-link-hover:  var(--color-grey-3);
+}
+
+// ----------------------------------------------
+
+.hover-background {
+  &:hover {
+    background-color: var(--color-grey-1);
+  }
+}
+
+// Hover
+.hover-blue {
+  &:hover {
+      color: var(--color-blue) !important;
+  }
+}
+
+.hover-yellow {
+  &:hover {
+      color: var(--color-orange) !important;
+  }
+}

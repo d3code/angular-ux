@@ -1,0 +1,29 @@
+textarea {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+
+  display: block;
+  width: 100%;
+
+  padding: 0.6rem 0.8rem;
+  
+  border: 1px solid var(--color-border, #ccc);
+}
+
+
+
+textarea {
+  /* Remove the default vertical scrollbar in IE */
+  overflow: auto; 
+  /* Only resize vertically so they don't break horizontal containers */
+  resize: vertical;
+
+  /* Remove the margin in Firefox and Safari */
+  margin: 0; 
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+

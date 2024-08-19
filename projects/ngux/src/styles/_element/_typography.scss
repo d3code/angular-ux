@@ -1,0 +1,111 @@
+
+
+abbr[title],
+abbr[data-original-title] {
+  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+
+  /* Add explicit cursor to indicate changed behavior */
+  cursor: help;
+
+  /* Remove the bottom border in Firefox 39- */
+  border-bottom: 0;
+}
+
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+
+dt {
+  font-weight: bold;
+}
+
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+
+dfn {
+  /* Add the correct font style in Android 4.3- */
+  font-style: italic;
+}
+
+
+b,
+strong {
+  /* Add the correct font weight in Chrome, Edge, and Safari */
+  font-weight: 600;
+}
+
+
+small {
+  /* Add the correct font size in all browsers */
+  font-size: 80%;
+}
+
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+
+sub {
+  bottom: -.25em;
+}
+
+
+sup {
+  top: -.5em;
+}
+
+
+
+
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #868e96;
+  text-align: left;
+  caption-side: bottom;
+}
+
+
+/*
+
+Avoid 300ms click delay on touch devices that support the `touch-action` CSS property
+In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11 DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` 
+is present. However, they DO support removing the click delay via `touch-action: manipulation`
+
+* https://getbootstrap.com/docs/4.0/content/reboot/#click-delay-optimization-for-touch
+* https://caniuse.com/#feat=css-touch-action
+* https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+
+*/
+a,
+area,
+button,
+[role="button"],
+input:not([type=range]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}

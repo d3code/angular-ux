@@ -1,0 +1,17 @@
+:root {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+body {
+  margin: 0;
+
+  /* Explicitly set text alignment and line height so that we can later use the `inherit` value on things like `<th>` elements */
+  text-align: left;
+  line-height: 1.5;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+}

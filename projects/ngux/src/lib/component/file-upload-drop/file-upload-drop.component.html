@@ -1,0 +1,55 @@
+<h4 class="mt-8 mb-2">Attachments</h4>
+
+<ng-container *ngIf="files as accounts">
+  <table>
+    <tbody>
+      <tr (click)="setFile(a)" [x-offcanvas]="'file'" *ngFor="let a of accounts | filter:filter | pagination:pagination">
+        <!-- <td>{{a.id}}</td> -->
+        <td class="text-sm">{{a.file_name}}</td>
+        <td class="text-sm">{{a.mime}}</td>
+        <td class="text-sm">{{a.created}}</td>
+        <!-- <td>{{a.path}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <ul class="inline pagination">
+      <li>
+        <a (click)="pagination.previousPage()">
+          <i class="fa-light fa-chevron-left fa-fw"></i>
+        </a>
+      </li>
+      <li class="page-number">
+        <p>{{pagination.currentPage + 1}} of {{pagination.getTotalPages()}}</p>
+      </li>
+      <li>
+        <a (click)="pagination.nextPage()">
+          <i class="fa-light fa-chevron-right fa-fw"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+</ng-container>
+
+<form>
+  <input
+    (onchange)="uploadFile($event)"
+    class="custom-file-input"
+    type="file"
+    multiple
+    accept="*"
+  />
+</form>
+
+<x-offcanvas trigger="file" [width]="550">
+ <h3>File</h3>
+
+  <ng-container *ngIf="file">
+
+    <img width="100%" *ngIf="file.mime.startsWith('image/')"  [src]="url">
+    <iframe width="100%" *ngIf="file.mime.startsWith('text/') || file.mime.startsWith('application/pdf')" [src]="url" frameborder="0"></iframe>
+    
+  </ng-container>
+
+</x-offcanvas>

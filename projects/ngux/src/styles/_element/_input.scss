@@ -1,0 +1,67 @@
+input:focus-visible {
+  outline: 1px solid var(--color-blue-1); 
+}
+
+input {
+
+  /* Show overflow in Edge */
+  overflow: visible;
+
+  /* Remove the margin in Firefox and Safari */
+  margin: 0; 
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+
+  display: block;
+  width: 100%;
+
+  padding: 0.6rem 0.8rem;
+  
+  border: 1px solid var(--color-border, #ccc);
+}
+
+
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  /* Add the correct box sizing and remove padding in IE 10 */
+  box-sizing: border-box; 
+  padding: 0; 
+}
+
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  /*
+  Remove the default appearance of temporal inputs to avoid a Mobile Safari bug where setting a custom line-height prevents text from being vertically centered within the input
+  - https://bugs.webkit.org/show_bug.cgi?id=139848
+  - https://github.com/twbs/bootstrap/issues/11266
+  */
+  -webkit-appearance: listbox;
+  appearance: listbox;
+}
+
+
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  /* Correct the cursor style of increment and decrement buttons in Chrome */
+  height: auto;
+}
+
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  /* Remove the inner padding and cancel buttons in Chrome and Safari on macOS */
+  -webkit-appearance: none;
+}
+

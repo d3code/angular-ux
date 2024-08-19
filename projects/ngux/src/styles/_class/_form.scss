@@ -1,0 +1,22 @@
+form.ng-submitted {
+  .ng-invalid:not(form) {
+      border-color: var(--color-red);
+  }
+}
+
+.form-error {
+  font-size: 0.9rem;
+  color: var(--color-red);
+  padding: 0.2rem;
+}
+
+.message {
+  margin: 1.6rem 0;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  // border-radius: 4px;
+}
+
+.message-error {
+  background-color: var(--color-red-light);
+}

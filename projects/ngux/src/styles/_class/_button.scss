@@ -1,0 +1,82 @@
+@use "sass:map";
+
+a.btn {
+  text-decoration: none;
+  line-height: 3.1rem;
+}
+
+.btn,
+button {
+  color: var(--button-default-color);
+  background-color: var(--button-default-background-color);
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  margin: 0;
+  padding-inline: var(--button-padding-x);
+
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+
+  height: 3.2rem;
+  display: inline-block;
+
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover {
+    color: var(--button-default-hover-color);
+    background-color: var(--button-default-hover-background-color);
+    border-color: var(--button-default-hover-border-color);
+  }
+}
+
+.btn-sm {
+  font-size: 0.9rem;
+  padding-inline: var(--button-padding-sm-x);
+  height: 2.5rem;
+}
+
+.btn-lg {
+  font-size: 1.2rem;
+  padding-inline: var(--button-padding-lg-x);
+  height: 3.8rem;
+}
+
+
+$light-theme-colors: map-get($theme-colors, "light");
+@each $color, $value in $light-theme-colors {
+
+  .btn-#{$color} {
+    color: var(--button-#{$color}-color);
+    border-color: var(--button-#{$color}-border-color);
+    background-color: var(--button-#{$color}-background-color);
+
+    &.active {
+      color: var(--button-#{$color}-active-color);
+      border-color: var(--button-#{$color}-active-border-color);
+      background-color: var(--button-#{$color}-active-background-color);
+    }
+
+    &:disabled {
+      color: var(--button-#{$color}-disabled-color);
+      border-color: var(--button-#{$color}-disabled-border-color);
+      background-color: var(--button-#{$color}-disabled-background-color);
+    }
+  
+    &:hover {
+      color: var(--button-#{$color}-hover-color);
+      border-color: var(--button-#{$color}-hover-border-color);
+      background-color: var(--button-#{$color}-hover-background-color);
+    }
+  }
+}

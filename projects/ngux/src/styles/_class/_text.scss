@@ -1,0 +1,34 @@
+// Size
+.text-xs {
+  font-size: 0.8rem !important;
+}
+.text-sm {
+  font-size: 0.9rem !important;
+}
+.text-lg {
+  font-size: 1.2rem !important;
+}
+.text-xl {
+  font-size: 1.4rem !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+// Weight
+.text-weight-light {
+  font-weight: 100 !important;
+}
+.text-weight-normal {
+  font-weight: 300 !important;
+}
+.text-weight-bold {
+  font-weight: 400 !important;
+}
+
+// Monospace
+.monospace {
+  font-family: monospace;
+  font-weight: 300;
+}
