@@ -47,9 +47,9 @@
 
 
 @each $color, $value in $colors {
-  @for $i from 100 through 900 {
-    .bg-#{$color}-#{$i} {
-      background-color: var(--color-#{$color}-#{$i});
+  @for $i from 1 through 9 {
+    .bg-#{$color}-#{$i}00 {
+      background-color: var(--color-#{$color}-#{$i}00);
     }
   }
 }
@@ -62,18 +62,18 @@
 }
 
 @each $color, $value in $colors {
-  @for $i from 100 through 900 {
-    .text-#{$color}-#{$i} {
-      color: var(--color-#{$color}-#{$i});
+  @for $i from 1 through 9 {
+    .text-#{$color}-#{$i}00 {
+      color: var(--color-#{$color}-#{$i}00);
     }
   }
 }
 
 @each $color, $value in $colors {
-  @for $i from 100 through 900 {
-    .text-hover-#{$color}-#{$i} {
+  @for $i from 1 through 9 {
+    .text-hover-#{$color}-#{$i}00 {
       &:hover {
-        color: var(--color-#{$color}-#{$i});
+        color: var(--color-#{$color}-#{$i}00);
       }
     }
   }
