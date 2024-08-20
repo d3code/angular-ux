@@ -108,11 +108,7 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-            "name": "${GITHUB_ACTOR}",
-            "email": "${GITHUB_ACTOR}@users.noreply.github.com"
-          }
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     },
