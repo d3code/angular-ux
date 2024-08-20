@@ -10,10 +10,7 @@
   display: inline-block;
 }
 
-.hidden {
-  display: none;
-}
-
+.hidden,
 [hidden] {
   display: none !important;
 }

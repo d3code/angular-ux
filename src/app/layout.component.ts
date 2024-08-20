@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { last } from 'rxjs';
 import { DarkmodeModule } from '../../projects/ngux/src/lib/component/darkmode/darkmode.module';
 import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.module';
@@ -17,10 +17,17 @@ import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.modu
     IconModule,
   ],
   template: `
-    <div class="flex-row align-space-between bg-primary p-4">
-      <div></div>
+    <div class="flex-row align-space-between bg-primary px-4 py-2">
+      <div class="text-white">
+        <span class="pl-2 font-weight-400 text-lg">Angular UX</span>
+        <span class="pl-4"><small>ngux</small></span>
+      </div>
       <div class="">
-        <ux-darkmode></ux-darkmode>
+        <a href="https://github.com/d3code/angular-ux" target="_blank" class="btn btn-md btn-primary mr-0">
+          <ux-icon name="deployed_code"></ux-icon>
+          <span class="pl-2">Github</span>
+        </a>
+        <ux-darkmode size="md"></ux-darkmode>
       </div>
     </div>
     <div class="flex height-min-100vh">
@@ -65,6 +72,8 @@ import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.modu
   `,
 })
 export class LayoutComponent {
+  router = inject(Router);
+
   menuItems = [
     {
       label: 'Theme',

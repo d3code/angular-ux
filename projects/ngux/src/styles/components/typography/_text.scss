@@ -22,6 +22,9 @@
   font-weight: 300;
 }
 
+.text-white {
+  color: #fff;
+}
 
 
 @each $color, $value in $theme-color-names {

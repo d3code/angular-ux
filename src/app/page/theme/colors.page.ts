@@ -20,7 +20,7 @@ import { CommonModule, NgFor } from '@angular/common';
             <div>
               <strong>{{ colors.title }}</strong>
             </div>
-            <div>{{ colors.description }}</div>
+            <div class="text-gray-900">{{ colors.description }}</div>
           </td>
           <td style="width: 224px;">
             <ux-code
