@@ -3,83 +3,64 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { last } from 'rxjs';
 import { DarkmodeModule } from '../../projects/ngux/src/lib/component/darkmode/darkmode.module';
+import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.module';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, CommonModule, RouterLinkActive, DarkmodeModule],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    CommonModule,
+    RouterLinkActive,
+    DarkmodeModule,
+    IconModule,
+  ],
   template: `
-    <div class="root">
-      <div class="menu">
-        <div *ngFor="let item of menuItems" class="section">
-          <h2>{{ item.label }}</h2>
-          <ul>
-            <li *ngFor="let sectionItem of item.children">
-              <a routerLinkActive="active" [routerLink]="(item.basePath || '') + sectionItem.path">{{ sectionItem.label }}</a>
+    <div class="flex-row align-space-between bg-primary p-4">
+      <div></div>
+      <div class="">
+        <ux-darkmode></ux-darkmode>
+      </div>
+    </div>
+    <div class="flex height-min-100vh">
+      <div class="menu p-12">
+        <div *ngFor="let item of menuItems" class="mb-6">
+          <div class="mb-4 text-lg font-weight-500">{{ item.label }}</div>
+          <ul class="list-none p-0">
+            <li class="pb-3" *ngFor="let sectionItem of item.children">
+              <a
+                class="pl-4 text-gray-800 text-hover-blue-700 display-block"
+                routerLinkActive="active"
+                [routerLink]="(item.basePath || '') + sectionItem.path"
+              >
+                {{ sectionItem.label }}
+              </a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="content">
-        <div class="text-right">
-          <ux-darkmode></ux-darkmode>
-        </div>
+      <div class="content px-14 py-10">
         <router-outlet></router-outlet>
       </div>
     </div>
   `,
   styles: `
-    .root {
-      display: flex;
-      min-height: 100vh;
-    }
 
     .menu {
-      width: 240px;
-      padding: 20px 30px 60px;
-      background-color: var(--color-surface);
+      flex: 0 0 240px;
+      // background-color: var(--color-gray-200);
 
-      .section {
-        margin-bottom: 20px;
-
-        h2 {
-          margin: 0 0 10px;
-          font-size: 16px;
-          font-weight: 500;
-        }
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 16px;
-
-        li {
-          margin-bottom: 6px;
-
-          a {
-            // color: #333;
-            text-decoration: none;
-            padding-left: 1rem;
-            margin-left: 0.4rem;
-            border-left: 3px solid transparent;
-            display: block;
-
-            &.active {
-              border-color: #007bff;
-            }
-
-            &:hover {
-              color: #007bff;
-            }
-          }
+      a {
+        border-left: 3px solid transparent;
+        &.active {
+          border-color: var(--color-blue-700);
         }
       }
     }
 
     .content {
       flex: 1;
-      padding: 20px;
     }
   `,
 })
@@ -90,10 +71,11 @@ export class LayoutComponent {
       basePath: '/theme',
       children: [
         { label: 'Theme', path: '/theme' },
+        { label: 'Code', path: '/code' },
         { label: 'Colors', path: '/colors' },
         { label: 'Dark Mode', path: '/darkmode' },
         { label: 'Icons', path: '/icons' },
-        { label: 'Code', path: '/code' },
+        { label: 'Typography', path: '/typography' },
       ],
     },
     {
@@ -134,6 +116,7 @@ export class LayoutComponent {
         { label: 'Checkbox', path: '/checkbox' },
         { label: 'Datepicker', path: '/datepicker' },
         { label: 'Datetimepicker', path: '/datetimepicker' },
+        { label: 'Form', path: '/form' },
         { label: 'Input', path: '/input' },
         { label: 'Progress', path: '/progress' },
         { label: 'Radio', path: '/radio' },

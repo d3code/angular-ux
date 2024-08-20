@@ -19,3 +19,7 @@ abbr[data-original-title] {
   /* Remove the bottom border in Firefox 39- */
   border-bottom: 0;
 }
+ body {
+  /* Explicitly set text alignment so that we can later use the `inherit` value on things like `<th>` elements */
+  text-align: left;
+ }

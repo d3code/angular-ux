@@ -24,3 +24,7 @@ section {
   /* Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers) */
   display: block;
 }
+ body {
+  margin: 0;
+  padding: 0;
+ }

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .text-xs {
   font-size: 0.8rem !important;
 }
@@ -11,16 +13,6 @@
   font-size: 1.4rem !important;
 }
 
-.text-weight-light {
-  font-weight: 100 !important;
-}
-.text-weight-normal {
-  font-weight: 300 !important;
-}
-.text-weight-bold {
-  font-weight: 400 !important;
-}
-
 .uppercase {
   text-transform: uppercase !important;
 }
@@ -28,4 +20,61 @@
 .monospace {
   font-family: monospace;
   font-weight: 300;
+}
+
+
+
+@each $color, $value in $theme-color-names {
+  .text-#{$color} {
+    color: var(--color-#{$color});
+  }
+}
+
+@each $color, $value in $theme-color-names {
+  .text-hover-#{$color} {
+    &:hover {
+      color: var(--color-#{$color});
+    }
+  }
+}
+
+@each $color, $value in $theme-color-names {
+  .bg-#{$color} {
+    background-color: var(--color-#{$color});
+  }
+}
+
+
+
+@each $color, $value in $colors {
+  @for $i from 100 through 900 {
+    .bg-#{$color}-#{$i} {
+      background-color: var(--color-#{$color}-#{$i});
+    }
+  }
+}
+
+
+@each $color, $value in $theme-color-names {
+  .border-#{$color} {
+    border-color: var(--color-#{$color});
+  }
+}
+
+@each $color, $value in $colors {
+  @for $i from 100 through 900 {
+    .text-#{$color}-#{$i} {
+      color: var(--color-#{$color}-#{$i});
+    }
+  }
+}
+
+@each $color, $value in $colors {
+  @for $i from 100 through 900 {
+    .text-hover-#{$color}-#{$i} {
+      &:hover {
+        color: var(--color-#{$color}-#{$i});
+      }
+    }
+  }
 }

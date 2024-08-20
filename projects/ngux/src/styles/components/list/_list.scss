@@ -1,5 +1,12 @@
-ul.no-style {
-    list-style: none;
-    padding: 0;
-  }
+.list-none, .list-plain {
+  list-style-type: none;
+}
 
+.list-inline {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-inline > li {
+  display: inline;
+}

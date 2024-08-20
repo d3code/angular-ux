@@ -1,13 +1,15 @@
+
+
 :root,
 [data-theme-scheme=light] {
-  --color-link:  var(--color-grey-5);
-  --color-link-hover:  var(--color-grey-6);
+  --color-link:  var(--color-blue-500);
+  --color-link-hover:  var(--color-gray-600);
 }
 
 :root,
 [data-theme-scheme=dark] {
-  --color-link:  var(--color-grey-6);
-  --color-link-hover:  var(--color-grey-3);
+  --color-link:  var(--color-blue-600);
+  --color-link-hover:  var(--color-gray-300);
 }
 
 a {

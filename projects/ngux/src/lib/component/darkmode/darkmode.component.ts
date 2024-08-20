@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { DarkmodeService } from './darkmode.service';
 import { IconModule } from '../icon/icon.module';
@@ -8,8 +8,8 @@ import { IconModule } from '../icon/icon.module';
   standalone: true,
   imports: [IconModule, AsyncPipe],
   template: `
-    <button class="btn btn-sm btn-light" (click)="darkmodeService.toggle()">
-      <ux-icon [size]="16" [name]="mode"></ux-icon>
+    <button class="btn btn-{{size}} btn-{{color}}" (click)="darkmodeService.toggle()">
+      <ux-icon [name]="mode"></ux-icon>
     </button>
   `,
   styles: ``
@@ -18,6 +18,9 @@ export class DarkmodeComponent implements OnInit {
   darkmodeService = inject(DarkmodeService);
   $mode = this.darkmodeService.$modeSubject;
   mode: 'light_mode' | 'mode_night' | 'night_sight_auto' = 'night_sight_auto';
+  
+  @Input() color: string = 'primary';
+  @Input() size: 'sm' | 'md' | 'lg' = 'sm';
 
   ngOnInit(): void {
     this.$mode.subscribe((mode) => {

@@ -21,3 +21,56 @@
   display: inline;
   margin-left: auto;
 }
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-left {
+  text-align: start;
+}
+
+.align-right {
+  text-align: end;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.align-space-between {
+  justify-content: space-between;
+}
+
+.align-space-around {
+  justify-content: space-around;
+}
+
+.align-space-evenly {
+  justify-content: space-evenly;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+

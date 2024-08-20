@@ -11,6 +11,7 @@ import { CodePage } from './page/theme/code.page';
 import { SheetPage } from './page/layout/sheet.page';
 import { ButtonPage } from './page/form/button.page';
 import { SelectPage } from './page/form/select.page';
+import { FormPage } from './page/form/form.page';
 
 export const routes: Routes = [
   {
@@ -65,6 +66,10 @@ export const routes: Routes = [
           {
             path: 'button',
             component: ButtonPage,
+          },
+          {
+            path: 'form',
+            component: FormPage,
           },
           {
             path: 'select',
