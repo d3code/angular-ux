@@ -1,4 +1,6 @@
-# AngularLibs
+# Angular UX
+
+[Documentation](https://d3code.github.io/angular-ux/theme/colors)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
 
