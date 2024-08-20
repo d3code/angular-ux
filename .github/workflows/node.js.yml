@@ -26,5 +26,9 @@ jobs:
         cache: 'npm'
     - run: npm install -g @angular/cli
     - run: npm install
-    - run: git config --global url.https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/.insteadOf https://github.com/ 
+    - run: |
+          git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
+          git config --global url.https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/.insteadOf https://github.com/ 
+          git config -l
     - run: ng deploy --base-href=/angular-ux/ --remote=origin
