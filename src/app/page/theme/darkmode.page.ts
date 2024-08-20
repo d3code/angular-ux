@@ -7,6 +7,9 @@ import { DarkmodeModule } from '../../../../projects/ngux/src/lib/component/dark
   imports: [DarkmodeModule],
   template: `
     <h1>Dark Mode</h1>
+
+    <h2>Toggle button</h2>
+    <p>Use the <code>ux-darkmode</code> component to add a dark mode toggle button to your application.</p>
     <ux-darkmode></ux-darkmode>
   `,
   styles: ``
