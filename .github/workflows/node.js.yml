@@ -26,4 +26,6 @@ jobs:
         cache: 'npm'
     - run: npm install -g @angular/cli
     - run: npm install
+    - run: git config --global user.name "${GITHUB_ACTOR}"
+    - run: git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
     - run: ng deploy --base-href=/angular-ux/ --remote=origin
