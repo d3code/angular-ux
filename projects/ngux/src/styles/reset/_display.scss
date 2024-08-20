@@ -1,0 +1,26 @@
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+article, 
+aside, 
+dialog, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+main, 
+nav, 
+section {
+  /* Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers) */
+  display: block;
+}

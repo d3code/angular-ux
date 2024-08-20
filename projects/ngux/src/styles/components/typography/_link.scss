@@ -1,0 +1,20 @@
+:root,
+[data-theme-scheme=light] {
+  --color-link:  var(--color-grey-5);
+  --color-link-hover:  var(--color-grey-6);
+}
+
+:root,
+[data-theme-scheme=dark] {
+  --color-link:  var(--color-grey-6);
+  --color-link-hover:  var(--color-grey-3);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+  
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}

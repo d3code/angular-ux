@@ -1,0 +1,39 @@
+.mx-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr-a {
+  margin-left: auto;
+}
+
+@for $i from 0 through 48 {
+
+  .m-#{$i} {
+    margin: calc(#{$i}rem * $step);
+  }
+
+  .mt-#{$i} {
+    margin-top: calc(#{$i}rem * $step);
+  }
+
+  .mb-#{$i} {
+    margin-bottom: calc(#{$i}rem * $step);
+  }
+
+  .ml-#{$i} {
+    margin-left: calc(#{$i}rem * $step);
+  }
+
+  .mr-#{$i} {
+    margin-right: calc(#{$i}rem * $step);
+  }
+
+  .mx-#{$i} {
+    margin-inline: calc(#{$i}rem * $step);
+  }
+
+  .my-#{$i} {
+    margin-block: calc(#{$i}rem * $step);
+  }
+}

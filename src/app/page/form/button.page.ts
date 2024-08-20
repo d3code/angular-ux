@@ -10,6 +10,18 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
     <h1>Button</h1>
     <p>Buttons are used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.</p>
 
+    <!-- Base class -->
+    <div id="base">
+      <h2>Base style</h2>
+      <p>Buttons have a base style</p>
+
+      <div class="example">
+        <button>No class</button>
+        <button class="btn">.btn Class</button>
+        <button class="btn" disabled>Disabled</button>
+      </div>
+    </div>
+
     <!-- Types -->
     <div id="types">
       <h2>Button types</h2>
@@ -21,15 +33,19 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
         <li>Toggle button: A button that can be toggled on and off.</li>
       </ul>
 
-      <ux-code [code]="buttonTypes"></ux-code>
-
       <div class="example">
         <button class="btn btn-primary">Standard button</button>
         <button class="btn btn-primary">
           <ux-icon name="menu"></ux-icon>
         </button>
-        <a href="#" class="btn btn-primary">Link button</a>
+        <button class="btn btn-primary">
+          <ux-icon name="home" [weight]="300"></ux-icon>
+          <span class="pl-2">With text</span>
+        </button>
+        <a class="btn btn-primary">Link button</a>
       </div>
+
+      <ux-code [code]="buttonTypes"></ux-code>
     </div>
 
     <!-- States -->
@@ -62,7 +78,7 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
       <div class="example">
         <button class="btn btn-sm btn-primary">Small</button>
         <button class="btn btn-sm btn-primary">
-          <ux-icon [size]="16" name="menu"></ux-icon>
+          <ux-icon name="menu"></ux-icon>
         </button>
         <button class="btn btn-primary">Medium</button>
         <button class="btn btn-primary">
@@ -70,14 +86,14 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
         </button>
         <button class="btn btn-lg btn-primary">Large</button>
         <button class="btn btn-lg btn-primary">
-          <ux-icon [size]="24" name="menu"></ux-icon>
+          <ux-icon name="menu"></ux-icon>
         </button>
       </div>
     </div>
 
-    <!-- Colors -->
-    <div id="colors">
-      <h2>Button colors</h2>
+    <!-- Themes -->
+    <div id="themes">
+      <h2>Button themes</h2>
       <p>Buttons can have different colors:</p>
       <ul>
         <li>Primary: The primary button color.</li>
@@ -100,35 +116,37 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
         <button class="btn btn-light">Light</button>
         <button class="btn btn-dark">Dark</button>
       </div>
+
+      <ux-code [code]="buttonThemes"></ux-code>
     </div>
   `,
   styles: `
     .example {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: nowrap;
+      margin-block: 1rem;
       > button {
-        margin-right: 6px;
+        margin-right: 0.6rem;
       }
     }
   `
 })
 export class ButtonPage {
 
-  buttonTypes = `
-    <button class="btn btn-primary">Standard button</button>
-    <button class="btn btn-primary">
-      <span class="icon-container">
-        <span class="material-symbols">menu</span>
-      </span>
-    </button>
-    <button class="btn btn-primary">
-      <span class="icon-container">
-        <span class="material-symbols">home</span>
-      </span>  
-      <span>Hello</span>
-    </button>
-    <button class="btn btn-primary">Link button</button>
-    <button class="btn btn-primary btn-toggle">Toggle button</button>
-  `
+  buttonTypes = `<button class="btn btn-primary">Standard button</button>
+<button class="btn btn-primary">
+  <ux-icon name="menu"></ux-icon>
+</button>
+<button class="btn btn-primary">
+  <ux-icon name="menu"></ux-icon>
+  <span class="pl-2" [weight]="300">With text</span>
+</button>
+<a class="btn btn-primary">Link button</a>`
+
+  buttonThemes = `<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-danger">Danger</button>
+<button class="btn btn-info">Info</button>
+<button class="btn btn-light">Light</button>
+<button class="btn btn-dark">Dark</button>`
 }

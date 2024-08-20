@@ -1,0 +1,21 @@
+html {
+  /* Change the default font family in all browsers */
+  font-family: sans-serif;
+
+  /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+
+  /* Add explicit cursor to indicate changed behavior */
+  cursor: help;
+
+  /* Remove the bottom border in Firefox 39- */
+  border-bottom: 0;
+}

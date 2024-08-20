@@ -1,0 +1,4 @@
+html {
+  /* Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so we force a non-overlapping, non-auto-hiding scrollbar to counteract */
+  -ms-overflow-style: scrollbar;
+}

@@ -1,0 +1,61 @@
+@use "sass:map";
+
+$theme-color-names: (
+  "primary",
+  "secondary",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "light",
+  "dark"
+);
+
+$theme-colors: (
+  "light": (
+    "primary": get-color("light", "blue"),
+    "secondary": get-color("light", "gray"),
+    "success": get-color("light", "green"),
+    "info": get-color("light", "teal"),
+    "warning": get-color("light", "yellow"),
+    "danger": get-color("light", "red"),
+    "light": get-color-variation("light", "gray", "200"),
+    "dark": get-color-variation("light", "gray", "900")
+  ),
+  "dark": (
+    "primary": get-color("dark", "blue"),
+    "secondary": get-color("dark", "gray"),
+    "success": get-color("dark", "green"),
+    "info": get-color("dark", "teal"),
+    "warning": get-color("dark", "yellow"),
+    "danger": get-color("dark", "red"),
+    "light": get-color-variation("light", "gray", "800"),
+    "dark": get-color-shade("light", "gray", 78%)
+  )
+);
+
+@function get-theme-color($theme, $color) {
+  @return map-get(map-get($theme-colors, $theme), $color);
+}
+
+@function get-theme-color-shade($theme, $color, $shade) {
+  @return shift-color(get-theme-color($theme, $color), $shade);
+}
+
+:root,
+[data-color-scheme=light] {
+
+  $light-theme-colors: map-get($theme-colors, "light");
+  @each $color, $value in $light-theme-colors {
+    --color-#{$color}: #{$value};
+  }
+}
+
+:root,
+[data-color-scheme=dark] {
+
+  $dark-theme-colors: map-get($theme-colors, "dark");
+  @each $color, $value in $dark-theme-colors {
+    --color-#{$color}: #{$value};
+  }
+}
