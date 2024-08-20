@@ -20,7 +20,7 @@ export class DarkmodeComponent implements OnInit {
   mode: 'light_mode' | 'mode_night' | 'night_sight_auto' = 'night_sight_auto';
   
   @Input() color: string = 'primary';
-  @Input() size: 'sm' | 'md' | 'lg' = 'sm';
+  @Input() size: 'sm' | 'md' | 'lg' = 'md';
 
   ngOnInit(): void {
     this.$mode.subscribe((mode) => {

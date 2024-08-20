@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { last } from 'rxjs';
 import { DarkmodeModule } from '../../projects/ngux/src/lib/component/darkmode/darkmode.module';
 import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-layout',
@@ -15,6 +16,7 @@ import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.modu
     RouterLinkActive,
     DarkmodeModule,
     IconModule,
+    FontAwesomeModule,
   ],
   template: `
     <div class="flex-row align-space-between bg-primary px-4 py-2">
@@ -23,9 +25,15 @@ import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.modu
         <span class="pl-4"><small>ngux</small></span>
       </div>
       <div class="">
+        <a href="https://www.npmjs.com/package/ngux" target="_blank" class="btn btn-md btn-primary mr-0">
+          <!-- <ux-icon name="deployed_code"></ux-icon> -->
+          <fa-icon [icon]="faNpm" size="xl"></fa-icon>
+          <!-- <span class="pl-2">Github</span> -->
+        </a>
         <a href="https://github.com/d3code/angular-ux" target="_blank" class="btn btn-md btn-primary mr-0">
-          <ux-icon name="deployed_code"></ux-icon>
-          <span class="pl-2">Github</span>
+          <!-- <ux-icon name="deployed_code"></ux-icon> -->
+          <fa-icon [icon]="faGithub" size="xl"></fa-icon>
+          <!-- <span class="pl-2">Github</span> -->
         </a>
         <ux-darkmode size="md"></ux-darkmode>
       </div>
@@ -73,6 +81,8 @@ import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.modu
 })
 export class LayoutComponent {
   router = inject(Router);
+  faGithub = faGithub;
+  faNpm = faNpm;
 
   menuItems = [
     {
