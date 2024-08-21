@@ -39,7 +39,7 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
           <ux-icon name="menu"></ux-icon>
         </button>
         <button class="btn btn-primary">
-          <ux-icon name="home" [weight]="300"></ux-icon>
+          <ux-icon name="home"></ux-icon>
           <span class="pl-2">With text</span>
         </button>
         <a class="btn btn-primary">Link button</a>
@@ -78,7 +78,7 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
       <div class="example">
         <button class="btn btn-sm btn-primary">Small</button>
         <button class="btn btn-sm btn-primary">
-          <ux-icon name="menu"></ux-icon>
+          <ux-icon name="menu" size="sm"></ux-icon>
         </button>
         <button class="btn btn-primary">Medium</button>
         <button class="btn btn-primary">
@@ -86,7 +86,7 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
         </button>
         <button class="btn btn-lg btn-primary">Large</button>
         <button class="btn btn-lg btn-primary">
-          <ux-icon name="menu"></ux-icon>
+          <ux-icon name="menu" size="lg"></ux-icon>
         </button>
       </div>
     </div>

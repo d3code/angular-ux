@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgSelectModule } from '../../../../projects/ngux/src/lib/component/select/ng-select.module';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-select',
@@ -10,7 +11,7 @@ import { NgSelectModule } from '../../../../projects/ngux/src/lib/component/sele
 
     <ng-select 
       [items]="items"
-      bindLabel="name"
+      bindLabel="title"
       bindValue="id"
       [searchable]="true"
       placeholder="Search">
@@ -19,8 +20,21 @@ import { NgSelectModule } from '../../../../projects/ngux/src/lib/component/sele
   styles: ``
 })
 export class SelectPage {
+  data: any;
   items = [
     { id: 1, name: 'item1' },
     { id: 2, name: 'item2' }
   ]
+
+  constructor(httpClient: HttpClient) {
+    httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe((data: any) => {
+      console.log(data);
+      this.items = data;
+    });
+
+    httpClient.get('/assets/icons.json').subscribe((data: any) => {
+      console.log(data);
+      this.data = data;
+    });
+  }
 }

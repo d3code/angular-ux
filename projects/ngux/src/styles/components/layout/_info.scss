@@ -1,0 +1,6 @@
+.info {
+  @include background-opacity(get-theme-color("light", "primary"), 0.2);
+  border-left: 4px solid get-theme-color("light", "primary");
+  padding: 1.4rem 2rem;
+  margin-block: 1.6rem;
+}

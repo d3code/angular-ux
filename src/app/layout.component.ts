@@ -35,18 +35,24 @@ import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
           <fa-icon [icon]="faGithub" size="xl"></fa-icon>
           <!-- <span class="pl-2">Github</span> -->
         </a>
+        <!-- <span class="pl-4 mr-3" style="border-right: 1px solid #fff"></span> -->
         <ux-darkmode size="md"></ux-darkmode>
       </div>
     </div>
     <div class="flex height-min-100vh">
       <div class="menu p-12">
         <div *ngFor="let item of menuItems" class="mb-6">
-          <div class="mb-4 text-lg font-weight-500">{{ item.label }}</div>
+
+          <div *ngIf="item.label" class="mb-4 text-lg font-weight-500">
+            <ux-icon  *ngIf="item.icon" [weight]="200" size="md" [name]="item.icon" class="color-text mr-2"></ux-icon>
+            {{ item.label }}
+          </div>
           <ul class="list-none p-0">
             <li class="pb-3" *ngFor="let sectionItem of item.children">
               <a
                 class="pl-4 text-gray-800 text-hover-blue-700 display-block"
                 routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
                 [routerLink]="(item.basePath || '') + sectionItem.path"
               >
                 {{ sectionItem.label }}
@@ -86,7 +92,15 @@ export class LayoutComponent {
 
   menuItems = [
     {
+      label: 'Getting started',
+      basePath: '/',
+      children: [
+        { label: 'Introduction', path: '' },
+      ],
+    },
+    {
       label: 'Theme',
+      icon: 'format_paint',
       basePath: '/theme',
       children: [
         { label: 'Theme', path: '/theme' },
@@ -99,6 +113,7 @@ export class LayoutComponent {
     },
     {
       label: 'Layout',
+      icon: 'view_quilt',
       basePath: '/layout',
       children: [
         { label: 'Accordion', path: '/accordion' },
@@ -117,6 +132,7 @@ export class LayoutComponent {
     },
     {
       label: 'Navigation',
+      icon: 'navigation',
       basePath: '/navigation',
       children: [
         { label: 'Breadcrumb', path: '/breadcrumb' },
@@ -129,6 +145,7 @@ export class LayoutComponent {
     },
     {
       label: 'Form',
+      icon: 'lab_profile',
       basePath: '/form',
       children: [
         { label: 'Button', path: '/button' },
@@ -149,6 +166,7 @@ export class LayoutComponent {
     },
     {
       label: 'Data',
+      icon: 'database',
       basePath: '/data',
       children: [
         { label: 'Breadcrumb', path: '/breadcrumb' },
@@ -159,6 +177,7 @@ export class LayoutComponent {
     },
     {
       label: 'Feedback',
+      icon: 'feedback',
       basePath: '/feedback',
       children: [
         { label: 'Alert', path: '/alert' },

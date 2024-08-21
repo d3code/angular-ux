@@ -7,7 +7,7 @@ import hljs from 'highlight.js';
   imports: [],
   encapsulation: ViewEncapsulation.None,
   template: `
-      <code class="hljs" [class.pre]="!inline"></code>
+      <code [class.code-block]="!inline" class="hljs" [class.pre]="!inline"></code>
   `,
 })
 export class CodeComponent implements AfterViewInit {

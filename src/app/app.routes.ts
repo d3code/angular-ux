@@ -12,12 +12,18 @@ import { SheetPage } from './page/layout/sheet.page';
 import { ButtonPage } from './page/form/button.page';
 import { SelectPage } from './page/form/select.page';
 import { FormPage } from './page/form/form.page';
+import { IntroductionPage } from './page/getting-started/introduction.page';
 
 export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
     children: [
+      {
+        path: '',
+        component: IntroductionPage,
+        pathMatch: 'full',
+      },
       {
         path: 'theme',
         children: [
