@@ -1,0 +1,49 @@
+@use "sass:map";
+
+:root,
+[data-color-scheme=light] {
+
+  $light-theme-colors: map-get($theme-colors, "light");
+  @each $color, $value in $light-theme-colors {
+
+    --button-#{$color}-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-background-color: #{shift-color($value, 0%)};
+
+    --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-disabled-border-color: #{shift-color($value, -35%)};
+    --button-#{$color}-disabled-background-color: #{shift-color($value, -35%)};
+    
+    --button-#{$color}-active-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-active-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-active-background-color: #{shift-color($value, 20%)};
+
+    --button-#{$color}-hover-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-hover-border-color: #{shift-color($value, 10%)};
+    --button-#{$color}-hover-background-color: #{shift-color($value, 10%)};
+  }
+}
+
+:root,
+[data-color-scheme=dark] {
+
+  $dark-theme-colors: map-get($theme-colors, "dark");
+  @each $color, $value in $dark-theme-colors {
+
+    --button-#{$color}-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-background-color: #{shift-color($value, 0%)};
+
+    --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-disabled-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-disabled-background-color: #{shift-color($value, 50%)};
+    
+    --button-#{$color}-active-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-active-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-active-background-color: #{shift-color($value, -20%)};
+
+    --button-#{$color}-hover-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-hover-border-color: #{shift-color($value, 10%)};
+    --button-#{$color}-hover-background-color: #{shift-color($value, 10%)};
+  }
+}
