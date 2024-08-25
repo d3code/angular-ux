@@ -1,8 +1,6 @@
-@import './colors/colors-base';
-@import './colors/colors-theme';
+@import './variables/variables';
 
+@import './border';
 @import './button';
 @import './code';
 @import './font';
-
-$step: 0.2;

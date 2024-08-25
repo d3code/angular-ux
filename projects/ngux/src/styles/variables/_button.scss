@@ -1,5 +1,9 @@
 @use "sass:map";
 
+:root {
+  --button-border-radius: #{$border-radius};
+}
+
 :root,
 [data-color-scheme=light] {
 

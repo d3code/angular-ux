@@ -9,20 +9,6 @@
   --line-height: #{$line-height};
 }
 
-:root {
-  color: var(--color-text);
-  font-size: var(--font-size);
-  font-family: var(--font-family);
-  font-weight: var(--font-weight);
-  line-height: var(--line-height);
-}
-
-body {
-  color: var(--color-text);
-  background-color: var(--color-background);
-  line-height: var(--line-height);
-}
-
 :root,
 [data-color-scheme=light] {
   --color-text: #{get-color-shade("light", "gray", 30%)};
@@ -35,4 +21,18 @@ body {
   --color-text: #{get-color-shade("dark", "gray", -75%)};
   --color-background: #{get-color-shade("dark", "gray", 57%)};
   --color-surface: #{get-color-shade("dark", "gray", 52%)};
+}
+
+:root {
+  color: var(--color-text);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: var(--line-height);
 }

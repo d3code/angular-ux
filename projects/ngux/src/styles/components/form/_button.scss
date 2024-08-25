@@ -1,9 +1,5 @@
 @use "sass:map";
 
-:root {
-  --button-border-radius: 4px;
-}
-
 .btn,
 button {
   color: var(--color-text);
