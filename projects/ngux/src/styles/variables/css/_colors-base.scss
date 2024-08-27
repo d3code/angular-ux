@@ -1,0 +1,29 @@
+@use "sass:map";
+
+$light-variation-offsets: map-get($variation-offsets, "light");
+$dark-variation-offsets: map-get($variation-offsets, "dark");
+
+:root,
+[data-color-scheme=light] {
+
+  @each $color, $value in $colors {
+    --color-#{$color}: #{$value};
+
+    @each $offset, $shift in $light-variation-offsets {
+      --color-#{$color}-#{$offset}: #{shift-color($value, $shift)};
+    }
+  }
+}
+
+:root,
+[data-color-scheme=dark] {
+
+  @each $color, $value in $colors {
+    --color-#{$color}: #{$value};
+
+    @each $offset, $shift in $dark-variation-offsets {
+      $dark-color: shift-color($value, $dark-offset);
+      --color-#{$color}-#{$offset}: #{shift-color($dark-color, $shift)};
+    }
+  }
+}

@@ -41,21 +41,3 @@ $theme-colors: (
 @function get-theme-color-shade($theme, $color, $shade) {
   @return shift-color(get-theme-color($theme, $color), $shade);
 }
-
-:root,
-[data-color-scheme=light] {
-
-  $light-theme-colors: map-get($theme-colors, "light");
-  @each $color, $value in $light-theme-colors {
-    --color-#{$color}: #{$value};
-  }
-}
-
-:root,
-[data-color-scheme=dark] {
-
-  $dark-theme-colors: map-get($theme-colors, "dark");
-  @each $color, $value in $dark-theme-colors {
-    --color-#{$color}: #{$value};
-  }
-}

@@ -7,33 +7,33 @@
   margin-left: auto;
 }
 
-@for $i from 0 through 48 {
+@for $i from 0 through $spacing-iterations {
 
   .m-#{$i} {
-    margin: calc(#{$i}rem * $step);
+    margin: calc(#{$i}rem * $spacing-step);
   }
 
   .mt-#{$i} {
-    margin-top: calc(#{$i}rem * $step);
+    margin-top: calc(#{$i}rem * $spacing-step);
   }
 
   .mb-#{$i} {
-    margin-bottom: calc(#{$i}rem * $step);
+    margin-bottom: calc(#{$i}rem * $spacing-step);
   }
 
   .ml-#{$i} {
-    margin-left: calc(#{$i}rem * $step);
+    margin-left: calc(#{$i}rem * $spacing-step);
   }
 
   .mr-#{$i} {
-    margin-right: calc(#{$i}rem * $step);
+    margin-right: calc(#{$i}rem * $spacing-step);
   }
 
   .mx-#{$i} {
-    margin-inline: calc(#{$i}rem * $step);
+    margin-inline: calc(#{$i}rem * $spacing-step);
   }
 
   .my-#{$i} {
-    margin-block: calc(#{$i}rem * $step);
+    margin-block: calc(#{$i}rem * $spacing-step);
   }
 }

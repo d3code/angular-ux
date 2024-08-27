@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
 import { DarkmodeModule } from '../../../../projects/ngux/src/lib/component/darkmode/darkmode.module';
 import { CommonModule, NgFor } from '@angular/common';
@@ -30,6 +30,9 @@ import { CommonModule, NgFor } from '@angular/common';
             ></ux-code>
           </td>
           <td style="width: 112px;">
+            <span><code class="text-muted">{{ cssValue(colors.variable) }}</code></span>
+          </td>
+          <td style="width: 112px;">
             <span style="color: var({{ colors.variable }});">Sample text</span>
           </td>
           <td style="width: 112px;">
@@ -50,7 +53,7 @@ import { CommonModule, NgFor } from '@angular/common';
       </table>
     </div>
 
-    <div *ngFor="let y of ['gray', 'blue', 'green', 'yellow', 'red', 'teal']">
+    <div *ngFor="let y of ['gray', 'blue', 'green', 'yellow', 'red']">
       <h2>Color: {{ y }}</h2>
       <table>
         <tr *ngFor="let x of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
@@ -61,6 +64,9 @@ import { CommonModule, NgFor } from '@angular/common';
               language="text"
               [inline]="true"
             ></ux-code>
+          </td>
+          <td style="width: 112px;">
+            <span><code>{{ cssValueColor(y , x) }}</code></span>
           </td>
           <td style="width: 112px;">
             <span style="color: var(--color-{{ y }}-{{ x }}00);"
@@ -87,6 +93,15 @@ import { CommonModule, NgFor } from '@angular/common';
   styles: ``,
 })
 export class ColorsPage {
+  el: any = inject(ElementRef);
+
+  cssValue(key: any){
+    return getComputedStyle(this.el.nativeElement).getPropertyValue(key);
+  }
+  cssValueColor(color: any, shade: any){
+    return getComputedStyle(this.el.nativeElement).getPropertyValue('--color-' + color + '-' + shade + '00');
+  }
+
   classes = [
     {
       title: 'Theme Colors',
@@ -96,48 +111,48 @@ export class ColorsPage {
           title: 'Primary',
           description:
             'The primary color is used for primary buttons, links, and other primary elements.',
-          variable: '--color-primary',
+          variable: '--ux-color-primary',
         },
         {
           title: 'Secondary',
           description:
             'The secondary color is used for secondary buttons, links, and other secondary elements.',
-          variable: '--color-secondary',
+          variable: '--ux-color-secondary',
         },
         {
           title: 'Success',
           description:
             'The success color is used for success messages, buttons, and other success elements.',
-          variable: '--color-success',
+          variable: '--ux-color-success',
         },
         {
           title: 'Warning',
           description:
             'The warning color is used for warning messages, buttons, and other warning elements.',
-          variable: '--color-warning',
+          variable: '--ux-color-warning',
         },
         {
           title: 'Danger',
           description:
             'The danger color is used for error messages, buttons, and other danger elements.',
-          variable: '--color-danger',
+          variable: '--ux-color-danger',
         },
         {
           title: 'Info',
           description:
             'The info color is used for informational messages, buttons, and other info elements.',
-          variable: '--color-info',
+          variable: '--ux-color-info',
         },
         {
           title: 'Light',
           description:
             'The light color is used for light backgrounds and text.',
-          variable: '--color-light',
+          variable: '--ux-color-light',
         },
         {
           title: 'Dark',
           description: 'The dark color is used for dark backgrounds and text.',
-          variable: '--color-dark',
+          variable: '--ux-color-dark',
         },
       ],
     },

@@ -49,30 +49,3 @@ $variation-offsets: (
 @function get-color-variation($theme, $color, $variation) {
   @return shift-color(get-color($theme, $color), map-get(map-get($variation-offsets, $theme), $variation));
 }
-
-:root,
-[data-color-scheme=light] {
-
-  $light-variation-offsets: map-get($variation-offsets, "light");
-  @each $color, $value in $colors {
-    --color-#{$color}: #{$value};
-
-    @each $offset, $shift in $light-variation-offsets {
-      --color-#{$color}-#{$offset}: #{shift-color($value, $shift)};
-    }
-  }
-}
-
-:root,
-[data-color-scheme=dark] {
-
-  $dark-variation-offsets: map-get($variation-offsets, "dark");
-  @each $color, $value in $colors {
-    --color-#{$color}: #{$value};
-
-    @each $offset, $shift in $dark-variation-offsets {
-      $dark-color: shift-color($value, $dark-offset);
-      --color-#{$color}-#{$offset}: #{shift-color($dark-color, $shift)};
-    }
-  }
-}

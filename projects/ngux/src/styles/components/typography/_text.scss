@@ -43,7 +43,7 @@
 
 @each $color, $value in $theme-color-names {
   .bg-#{$color} {
-    background-color: var(--color-#{$color});
+    background-color: var(--ux-color-#{$color});
   }
 }
 

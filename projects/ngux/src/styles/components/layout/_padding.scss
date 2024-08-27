@@ -1,29 +1,30 @@
-@for $i from 0 through 48 {
+
+@for $i from 0 through $spacing-iterations {
   .p-#{$i} {
-    padding: calc(#{$i}rem * $step);
+    padding: calc(#{$i}rem * $spacing-step);
   }
 
   .pt-#{$i} {
-    padding-top: calc(#{$i}rem * $step);
+    padding-top: calc(#{$i}rem * $spacing-step);
   }
 
   .pb-#{$i} {
-    padding-bottom: calc(#{$i}rem * $step);
+    padding-bottom: calc(#{$i}rem * $spacing-step);
   }
 
   .pl-#{$i} {
-    padding-left: calc(#{$i}rem * $step);
+    padding-left: calc(#{$i}rem * $spacing-step);
   }
 
   .pr-#{$i} {
-    padding-right: calc(#{$i}rem * $step);
+    padding-right: calc(#{$i}rem * $spacing-step);
   }
 
   .px-#{$i} {
-    padding-inline: calc(#{$i}rem * $step);
+    padding-inline: calc(#{$i}rem * $spacing-step);
   }
 
   .py-#{$i} {
-    padding-block: calc(#{$i}rem * $step);
+    padding-block: calc(#{$i}rem * $spacing-step);
   }
 }

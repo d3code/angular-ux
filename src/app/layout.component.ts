@@ -109,6 +109,7 @@ export class LayoutComponent {
         { label: 'Dark Mode', path: '/darkmode' },
         { label: 'Icons', path: '/icons' },
         { label: 'Typography', path: '/typography' },
+        { label: 'Variables', path: '/variables' },
       ],
     },
     {
