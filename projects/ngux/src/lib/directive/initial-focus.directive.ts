@@ -1,15 +1,13 @@
-import { Directive, ElementRef, HostBinding, inject, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, Directive, ElementRef, HostBinding, inject, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[initialFocus]',
   standalone: true
 })
-export class InitialFocusDirective implements OnInit {
+export class InitialFocusDirective implements AfterContentChecked {
   elementRef = inject(ElementRef);
 
-  ngOnInit(): void {
+  ngAfterContentChecked(): void {
     this.elementRef.nativeElement.focus();
   }
-
-  // @HostBinding('tabindex') tabindex = 0;
 }

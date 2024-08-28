@@ -14,6 +14,7 @@ import { SelectPage } from './page/form/select.page';
 import { FormPage } from './page/form/form.page';
 import { IntroductionPage } from './page/getting-started/introduction.page';
 import { VariablesPage } from './page/theme/variables.page';
+import { MenuPage } from './page/navigation/menu.page';
 
 export const routes: Routes = [
   {
@@ -68,6 +69,15 @@ export const routes: Routes = [
           {
             path: 'sheet',
             component: SheetPage,
+          },
+        ],
+      },
+      {
+        path: 'navigation',
+        children: [
+          {
+            path: 'menu',
+            component: MenuPage,
           },
         ],
       },

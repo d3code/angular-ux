@@ -1,0 +1,26 @@
+@use "sass:map";
+
+:root {
+
+  --input-border-radius: #{$border-radius};
+}
+
+:root,
+[data-color-scheme=light] {
+
+    --input-color: var(--color-text);
+    --input-border-color: #{get-color-shade("light", "gray", -86%)};
+    --input-background-color: #{get-color-shade("light", "gray", -100%)};
+
+    --input-placeholder-color: #{get-color-shade("light", "gray", -50%)};
+}
+
+:root,
+[data-color-scheme=dark] {
+
+  --input-color: var(--color-text);
+  --input-border-color: #{get-color-shade("dark", "gray", 68%)};
+  --input-background-color: #{get-color-shade("dark", "gray", 66%)};
+
+  --input-placeholder-color: #{get-color-shade("dark", "gray", 20%)};
+}

@@ -31,3 +31,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Deploy to Github Pages
 
 `ng deploy --base-href=/angular-ux/ --remote=origin`
+
+## References
+
+https://github.com/jfcere/ngx-markdown
+
+https://marked.js.org/
+
+https://prismjs.com/
+
+https://github.com/FortAwesome/angular-fontawesome/blob/main/src/lib/icon/icon.component.ts
+
+https://ng-bootstrap.github.io/#/components/offcanvas/examples

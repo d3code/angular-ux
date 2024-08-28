@@ -25,12 +25,12 @@ import { default as iconVersions } from '../../../../projects/ngux/src/lib/compo
 
     <div style="display: flex">
       <div style="max-width: 1200px; flex: 1">
-        <h1>Content</h1>
         <div>
           <input
             type="text"
             initialFocus
             placeholder="Search"
+            class="mb-8"
             (keyup)="filter.setField($event, 'key')"
           />
         </div>

@@ -24,6 +24,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "highlight.js": "^11.10.0",
+    "lodash-es": "^4.17.21",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -33,6 +34,7 @@
     "@angular/cli": "^18.0.3",
     "@angular/compiler-cli": "^18.0.0",
     "@types/jasmine": "~5.1.0",
+    "@types/lodash-es": "^4.17.12",
     "angular-cli-ghpages": "^2.0.1",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

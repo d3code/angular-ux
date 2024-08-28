@@ -18,7 +18,7 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
     </ul>
 
     <h3>Inline code</h3>
-    <p>This is an example of inline <ux-code [inline]="true" code="<html></html>"/>.</p>
+    <p>This is an example of inline <ux-code [inline]="true" code='<code style="inline">html</code>' language="html"/>.</p>
     
     <h3>Block code</h3>
     <ux-code [code]="code"></ux-code>
@@ -28,18 +28,16 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
 })
 export class CodePage {
 
-  code = `
-    import { Pipe, PipeTransform } from '@angular/core';
+  code = `import { Pipe, PipeTransform } from '@angular/core';
 
-    @Pipe({
-      name: 'orderby',
-      standalone: true
-    })
-    export class OrderbyPipe implements PipeTransform {
+@Pipe({
+  name: 'orderby',
+  standalone: true
+})
+export class OrderbyPipe implements PipeTransform {
 
-      transform(value: unknown, ...args: unknown[]): unknown {
-        return null;
-      }
-    }
-  `
+  transform(value: unknown, ...args: unknown[]): unknown {
+    return null;
+  }
+}`
 }

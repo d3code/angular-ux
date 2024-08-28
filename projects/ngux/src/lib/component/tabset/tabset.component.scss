@@ -1,0 +1,26 @@
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+
+// @use '../../styles/theming' as *;
+
+:host {
+  display: block;
+
+  &.full-width .tabset {
+    justify-content: space-around;
+  }
+
+  ::ng-deep nb-tab {
+    flex: 1;
+    -ms-flex: 1 1 auto;
+    overflow: auto;
+    display: none;
+    &.content-active {
+      display: block;
+    }
+  }
+
+}

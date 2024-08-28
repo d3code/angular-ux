@@ -5,6 +5,8 @@ import { DarkmodeModule } from '../../projects/ngux/src/lib/component/darkmode/d
 import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
+import { MenuComponent } from '../../projects/ngux/src/lib/component/menu/menu.component';
+import { MenuLayoutComponent } from '../../projects/ngux/src/lib/component/menu/menu-layout.component';
 
 @Component({
   selector: 'app-layout',
@@ -17,6 +19,8 @@ import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
     DarkmodeModule,
     IconModule,
     FontAwesomeModule,
+    MenuComponent,
+    MenuLayoutComponent,
   ],
   template: `
     <div class="flex-row align-space-between bg-primary px-4 py-2">
@@ -26,64 +30,19 @@ import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
       </div>
       <div class="">
         <a href="https://www.npmjs.com/package/ngux" target="_blank" class="btn btn-md btn-primary mr-0">
-          <!-- <ux-icon name="deployed_code"></ux-icon> -->
           <fa-icon [icon]="faNpm" size="xl"></fa-icon>
-          <!-- <span class="pl-2">Github</span> -->
         </a>
         <a href="https://github.com/d3code/angular-ux" target="_blank" class="btn btn-md btn-primary mr-0">
-          <!-- <ux-icon name="deployed_code"></ux-icon> -->
           <fa-icon [icon]="faGithub" size="xl"></fa-icon>
-          <!-- <span class="pl-2">Github</span> -->
         </a>
-        <!-- <span class="pl-4 mr-3" style="border-right: 1px solid #fff"></span> -->
         <ux-darkmode size="md"></ux-darkmode>
       </div>
     </div>
-    <div class="flex height-min-100vh">
-      <div class="menu p-12">
-        <div *ngFor="let item of menuItems" class="mb-6">
-
-          <div *ngIf="item.label" class="mb-4 text-lg font-weight-500">
-            <ux-icon  *ngIf="item.icon" [weight]="200" size="md" [name]="item.icon" class="color-text mr-2"></ux-icon>
-            {{ item.label }}
-          </div>
-          <ul class="list-none p-0">
-            <li class="pb-3" *ngFor="let sectionItem of item.children">
-              <a
-                class="pl-4 text-gray-800 text-hover-blue-700 display-block"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}"
-                [routerLink]="(item.basePath || '') + sectionItem.path"
-              >
-                {{ sectionItem.label }}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="content px-14 py-10">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+    <ux-menu-layout [menuItems]="menuItems">
+      <router-outlet></router-outlet>
+    </ux-menu-layout>
   `,
-  styles: `
-
-    .menu {
-      flex: 0 0 240px;
-      // background-color: var(--color-gray-200);
-
-      a {
-        border-left: 3px solid transparent;
-        &.active {
-          border-color: var(--color-blue-700);
-        }
-      }
-    }
-
-    .content {
-      flex: 1;
-    }
-  `,
+  styles: ``,
 })
 export class LayoutComponent {
   router = inject(Router);
@@ -117,14 +76,20 @@ export class LayoutComponent {
       icon: 'view_quilt',
       basePath: '/layout',
       children: [
-        { label: 'Accordion', path: '/accordion' },
         { label: 'Card', path: '/card' },
-        { label: 'Carousel', path: '/carousel' },
+        { label: 'Media', path: '/media' },
+        { label: 'Spacing', path: '/spacing' },
+      ],
+    },
+    {
+      label: 'Component',
+      icon: 'package_2',
+      basePath: '/component',
+      children: [
+        { label: 'Accordion', path: '/accordion' },
         { label: 'Collapse', path: '/collapse' },
         { label: 'Dropdown', path: '/dropdown' },
-        { label: 'Media', path: '/media' },
         { label: 'Modal', path: '/modal' },
-        { label: 'Spacing', path: '/spacing' },
         { label: 'Sheet', path: '/sheet' },
         { label: 'Tag', path: '/tag' },
         { label: 'Tooltip', path: '/tooltip' },

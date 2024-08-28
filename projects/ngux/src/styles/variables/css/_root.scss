@@ -1,0 +1,22 @@
+@use "sass:map";
+
+:root {
+  --font-family: #{$font-family};
+  --font-size: #{$font-size};
+  --font-weight: #{$font-weight};
+  --line-height: #{$line-height};
+}
+
+:root,
+[data-color-scheme=light] {
+  --color-text: #{get-color-shade("light", "gray", 30%)};
+  --color-background: #{get-color-shade("light", "gray", -99%)};
+  --color-surface: #{get-color-shade("light", "gray", -85%)};
+}
+
+:root,
+[data-color-scheme=dark] {
+  --color-text: #{get-color-shade("dark", "gray", -75%)};
+  --color-background: #{get-color-shade("dark", "gray", 57%)};
+  --color-surface: #{get-color-shade("dark", "gray", 52%)};
+}
