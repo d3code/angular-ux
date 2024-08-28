@@ -15,7 +15,6 @@ $dark-variation-offsets: map-get($variation-offsets, "dark");
   }
 }
 
-:root,
 [data-color-scheme=dark] {
 
   @each $color, $value in $colors {

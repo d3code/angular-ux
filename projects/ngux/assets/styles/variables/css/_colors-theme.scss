@@ -10,7 +10,6 @@ $dark-theme-colors: map-get($theme-colors, "dark");
   }
 }
 
-:root,
 [data-color-scheme=dark] {
   @each $color, $value in $dark-theme-colors {
     --ux-color-#{$color}: #{$value};

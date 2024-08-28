@@ -1,10 +1,11 @@
 {
-  "name": "angular-libs",
+  "name": "angular-ux",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ngux": "ng build ngux",
     "watch": "ng build --watch --configuration development",
     "watch:ngux": "ng build ngux --watch",
     "test": "ng test"

@@ -1,7 +1,6 @@
 @use "sass:map";
 
 :root {
-
   --input-border-radius: #{$border-radius};
 }
 
@@ -15,7 +14,6 @@
     --input-placeholder-color: #{get-color-shade("light", "gray", -50%)};
 }
 
-:root,
 [data-color-scheme=dark] {
 
   --input-color: var(--color-text);

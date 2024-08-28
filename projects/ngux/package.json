@@ -1,6 +1,35 @@
 {
   "name": "ngux",
-  "version": "0.0.7",
+  "description": "Angular UX Library",
+  "keywords": [
+    "angular",
+    "ux",
+    "library",
+    "web",
+    "css",
+    "sass",
+    "scss",
+    "front-end",
+    "framework",
+    "component",
+    "module",
+    "directive",
+    "service",
+    "pipe",
+    "theme",
+    "style",
+    "design",
+    "pattern",
+    "template",
+    "layout",
+    "grid",
+    "flex",
+    "responsive",
+    "mobile",
+    "desktop",
+    "tablet"
+  ],
+  "version": "0.0.8",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0"
@@ -8,5 +37,13 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "sass": "./assets/styles/ngux.scss"
+    },
+    "./public-api.ts": {
+      "import": "./public-api"
+    }
+  }
 }

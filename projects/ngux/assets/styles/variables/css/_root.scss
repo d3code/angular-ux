@@ -14,7 +14,6 @@
   --color-surface: #{get-color-shade("light", "gray", -85%)};
 }
 
-:root,
 [data-color-scheme=dark] {
   --color-text: #{get-color-shade("dark", "gray", -75%)};
   --color-background: #{get-color-shade("dark", "gray", 57%)};
