@@ -1,14 +1,21 @@
 .ng-select {
 	&.ng-select-single {
 		.ng-select-container {
+
+			input {
+				padding-inline: 12px;
+			}
+
 			.ng-value-container {
 
+
+
 				.ng-value {
-					// display: inline-block;
+          padding-inline: 6px;
 
 					.ng-value-label {
 						display: inline-block;
-						padding-left: 6px;
+						// padding-left: 6px;
 						padding-right: 12px;
 					}
 				}

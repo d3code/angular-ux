@@ -4,7 +4,7 @@
 		background-color: var(--input-background-color);
 		border-radius: var(--input-border-radius);
 		border: 1px solid  var(--input-border-color);
-		min-height: 36px;
+		// min-height: 36px;
 		align-items: center;
 
 		.ng-value-container {
@@ -13,8 +13,8 @@
 			gap: 6px;
 
 			input {
-				padding-inline: 4px;
-				padding-block: 2px;
+				// padding-block: 2px;
+				padding: 0;
 			}
 		}
 	}

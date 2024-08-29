@@ -1,6 +1,12 @@
 .ng-select {
   &.ng-select-multiple {
     .ng-select-container {
+
+
+			input {
+				padding-inline: 6px;
+			}
+
       .ng-value-container {
 
         .ng-value {

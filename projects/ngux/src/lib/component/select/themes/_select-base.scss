@@ -48,6 +48,7 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+		min-height: 40px;
 
 		.ng-value-container {
 			display: flex;
@@ -88,6 +89,7 @@
 		}
 
 		.ng-select-container {
+
 			.ng-value-container {
 				@include wrap-text;
 
