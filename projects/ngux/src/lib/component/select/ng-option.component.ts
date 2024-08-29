@@ -22,7 +22,7 @@ export class NgOptionComponent implements OnChanges, AfterViewChecked, OnDestroy
 
 	readonly stateChange$ = new Subject<{ value: any; disabled: boolean; label?: string }>();
 
-	private _previousLabel?: string;
+	private _previousLabel: string;
 
 	constructor(public elementRef: ElementRef<HTMLElement>) {}
 
@@ -31,7 +31,7 @@ export class NgOptionComponent implements OnChanges, AfterViewChecked, OnDestroy
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		if (changes['disabled']) {
+		if (changes.disabled) {
 			this.stateChange$.next({
 				value: this.value,
 				disabled: this.disabled,

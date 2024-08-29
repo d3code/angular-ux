@@ -1,0 +1,12 @@
+.ng-select {
+
+	.ng-has-value .ng-placeholder {
+		display: none;
+	}
+
+	.ng-placeholder {
+		color: var(--input-placeholder-color);
+		position: absolute;
+		padding-left: 4px;
+	}
+}

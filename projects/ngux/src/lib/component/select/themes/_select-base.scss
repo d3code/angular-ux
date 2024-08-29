@@ -1,0 +1,151 @@
+.ng-select {
+	position: relative;
+	display: block;
+	@include box-sizing;
+
+	div,
+	input,
+	span {
+		@include box-sizing;
+	}
+
+	&.ng-select-searchable {
+		.ng-select-container .ng-value-container .ng-input {
+			opacity: 1;
+		}
+	}
+
+	&.ng-select-opened .ng-select-container {
+		z-index: 1001;
+	}
+
+	&.ng-select-disabled {
+		.ng-select-container {
+			.ng-value-container {
+				.ng-placeholder,
+				.ng-value {
+					user-select: none;
+					cursor: default;
+				}
+			}
+		}
+
+		.ng-arrow-wrapper {
+			cursor: default;
+		}
+	}
+
+	&.ng-select-filtered {
+		.ng-placeholder {
+			display: none;
+		}
+	}
+
+	.ng-select-container {
+		cursor: pointer;
+		display: flex;
+		outline: none;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		.ng-value-container {
+			display: flex;
+			flex: 1;
+
+			.ng-input {
+				opacity: 0;
+
+				> input {
+					box-sizing: content-box;
+					background: none transparent;
+					border: 0 none;
+					box-shadow: none;
+					outline: none;
+					
+					cursor: pointer;
+					width: 100%;
+
+					&::-ms-clear {
+						display: none;
+					}
+
+					&[readonly] {
+						user-select: none;
+						width: 0;
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&.ng-select-single {
+		&.ng-select-filtered {
+			.ng-select-container .ng-value-container .ng-value {
+				visibility: hidden;
+			}
+		}
+
+		.ng-select-container {
+			.ng-value-container {
+				@include wrap-text;
+
+				.ng-value {
+					@include wrap-text;
+
+					.ng-value-icon {
+						display: none;
+					}
+				}
+
+				.ng-input {
+					position: absolute;
+					left: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.ng-select-multiple {
+		&.ng-select-disabled {
+			> .ng-select-container .ng-value-container .ng-value {
+				.ng-value-icon {
+					display: none;
+				}
+			}
+		}
+
+		.ng-select-container {
+			.ng-value-container {
+				flex-wrap: wrap;
+
+
+				.ng-value {
+					white-space: nowrap;
+
+					&.ng-value-disabled {
+						.ng-value-icon {
+							display: none;
+						}
+					}
+
+					.ng-value-icon {
+						cursor: pointer;
+					}
+				}
+
+				.ng-input {
+					flex: 1;
+					z-index: 2;
+				}
+
+				.ng-placeholder {
+					z-index: 1;
+				}
+			}
+		}
+	}
+
+}

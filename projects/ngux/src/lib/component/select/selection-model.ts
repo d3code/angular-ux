@@ -8,9 +8,9 @@ export function DefaultSelectionModelFactory() {
 
 export interface SelectionModel {
 	value: NgOption[];
-	select(item: NgOption, multiple: boolean, selectableGroupAsModel: boolean): void;
-	unselect(item: NgOption, multiple: boolean): void;
-	clear(keepDisabled: boolean): void;
+	select(item: NgOption, multiple: boolean, selectableGroupAsModel: boolean);
+	unselect(item: NgOption, multiple: boolean);
+	clear(keepDisabled: boolean);
 }
 
 export class DefaultSelectionModel implements SelectionModel {
@@ -27,8 +27,8 @@ export class DefaultSelectionModel implements SelectionModel {
 		}
 		if (multiple) {
 			if (item.parent) {
-				const childrenCount = item.parent.children!.length;
-				const selectedCount = item.parent.children!.filter((x) => x.selected).length;
+				const childrenCount = item.parent.children.length;
+				const selectedCount = item.parent.children.filter((x) => x.selected).length;
 				item.parent.selected = childrenCount === selectedCount;
 			} else if (item.children) {
 				this._setChildrenSelectedState(item.children, true);
@@ -50,7 +50,7 @@ export class DefaultSelectionModel implements SelectionModel {
 				const children = item.parent.children;
 				this._removeParent(item.parent);
 				this._removeChildren(item.parent);
-				this._selected.push(...children!.filter((x) => x !== item && !x.disabled));
+				this._selected.push(...children.filter((x) => x !== item && !x.disabled));
 				item.parent.selected = false;
 			} else if (item.children) {
 				this._setChildrenSelectedState(item.children, false);
@@ -75,7 +75,7 @@ export class DefaultSelectionModel implements SelectionModel {
 	private _removeChildren(parent: NgOption) {
 		this._selected = [
 			...this._selected.filter((x) => x.parent !== parent),
-			...parent.children!.filter((x) => x.parent === parent && x.disabled && x.selected),
+			...parent.children.filter((x) => x.parent === parent && x.disabled && x.selected),
 		];
 	}
 
@@ -84,6 +84,6 @@ export class DefaultSelectionModel implements SelectionModel {
 	}
 
 	private _activeChildren(item: NgOption): boolean {
-		return item.children!.every((x) => !x.disabled || x.selected);
+		return item.children.every((x) => !x.disabled || x.selected);
 	}
 }

@@ -1,6 +1,11 @@
-# Ngux
+# Angular UX
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+## Status
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/d3code/angular-ux/node.js.yml?branch=master&label=Documentation&logo=github)](https://github.com/d3code/angular-ux/actions/workflows/node.js.yml)
+[![npm version](https://img.shields.io/npm/v/ngux?logo=npm&logoColor=fff)](https://www.npmjs.com/package/ngux)
+
+
 
 ## Code scaffolding
 

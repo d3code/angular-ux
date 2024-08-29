@@ -8,17 +8,31 @@
 [data-color-scheme=light] {
 
     --input-color: var(--color-text);
-    --input-border-color: #{get-color-shade("light", "gray", -86%)};
+    --input-color-disabled: #{get-color-shade("light", "gray", -50%)};
+    --input-border-color: #{get-color-shade("light", "gray", -80%)};
     --input-background-color: #{get-color-shade("light", "gray", -100%)};
 
     --input-placeholder-color: #{get-color-shade("light", "gray", -50%)};
+
+    --input-select-selected-color: #{get-color-shade("light", "gray", -100%)};
+    --input-select-selected-background-color: #{get-color-shade("light", "blue", 0%)};
+
+    --input-select-hover-color: #{get-color-shade("light", "gray", -97%)};
+    --input-select-hover-background-color: #{get-color-shade("light", "blue", -80%)};
 }
 
 [data-color-scheme=dark] {
 
   --input-color: var(--color-text);
-  --input-border-color: #{get-color-shade("dark", "gray", 68%)};
+  --input-color-disabled: #{get-color-shade("dark", "gray", 20%)};
+  --input-border-color: #{get-color-shade("dark", "gray", 38%)};
   --input-background-color: #{get-color-shade("dark", "gray", 66%)};
 
   --input-placeholder-color: #{get-color-shade("dark", "gray", 20%)};
+
+  --input-select-selected-color: #{get-color-shade("dark", "gray", -100%)};
+  --input-select-selected-background-color: #{get-color-shade("dark", "blue", 0%)};
+
+  --input-select-hover-color: #{get-color-shade("dark", "blue", -50%)};
+  --input-select-hover-background-color: #{get-color-shade("dark", "blue", 60%)};
 }

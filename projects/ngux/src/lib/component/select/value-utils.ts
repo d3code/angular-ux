@@ -1,6 +1,6 @@
 const unescapedHTMLExp = /[&<>"']/g;
 const hasUnescapedHTMLExp = RegExp(unescapedHTMLExp.source);
-const htmlEscapes: { [key: string]: string } = {
+const htmlEscapes = {
 	'&': '&amp;',
 	'<': '&lt;',
 	'>': '&gt;',

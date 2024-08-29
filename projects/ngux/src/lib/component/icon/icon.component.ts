@@ -1,7 +1,6 @@
 import {
   Component,
   ElementRef,
-  HostBinding,
   inject,
   Input,
   OnChanges,
@@ -24,6 +23,7 @@ import { default as sharp } from './fonts/MaterialSymbolsSharp.json';
       [style.font-family]="fontFamiliy"
       [style.line-height]="0"
       [style.position]="'relative'"
+      [style.display]="'inline-block'"
       [style.top.rem]="topValue"
       style="font-variation-settings: 'FILL' {{fill ? 1 : 0}}, 'wght' {{weight}}, 'GRAD' {{grade}}, 'opsz' {{opticalSizeValue}}"
     >
@@ -114,9 +114,9 @@ const ICON_DEFAULTS = {
     top: 0.2,
   },
   'sm': {
-    size: 1.1,
+    size: 1.4,
     opticalSize: 20,
-    top: 0.26,
+    top: 0.30,
   },
   'md': {
     size: 1.6,

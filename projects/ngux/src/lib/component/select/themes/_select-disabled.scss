@@ -1,0 +1,19 @@
+.ng-select {
+	&.ng-select-disabled {
+		> .ng-select-container {
+			background-color: var(--input-background-color);
+		}
+	}
+
+	&.ng-select-multiple {
+		&.ng-select-disabled {
+			> .ng-select-container .ng-value-container .ng-value {
+				background-color: var(--color-gray-100);
+				// border: 1px solid  var(--input-border-color);
+				.ng-value-label {
+					// padding: 0 5px;
+				}
+			}
+		}
+	}
+}

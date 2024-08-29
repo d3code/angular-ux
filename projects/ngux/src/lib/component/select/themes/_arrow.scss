@@ -1,0 +1,17 @@
+.ng-select {
+  .ng-arrow-wrapper {
+    cursor: pointer;
+    user-select: none;
+    width: 24px;
+    margin-right: 10px;
+  }
+
+  .ng-arrow:hover {
+    color: var(--color-blue-700) !important;
+  }
+  .ng-arrow-wrapper {
+    .ng-arrow {
+      color: var(--input-placeholder-color);
+    }
+  }
+}

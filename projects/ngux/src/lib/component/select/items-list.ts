@@ -1,15 +1,14 @@
 import { newId } from './id';
-import { NgOptionComponent } from './ng-option.component';
 import { NgSelectComponent } from './ng-select.component';
 import { NgOption } from './ng-select.types';
 import * as searchHelper from './search-helper';
 import { SelectionModel } from './selection-model';
 import { isDefined, isFunction, isObject } from './value-utils';
 
-type OptionGroups = Map<string | NgOption | undefined, NgOption[]>;
+type OptionGroups = Map<string | NgOption, NgOption[]>;
 
 export class ItemsList {
-	private _groups: OptionGroups | undefined;
+	private _groups: OptionGroups;
 
 	constructor(
 		private _ngSelect: NgSelectComponent,
@@ -47,7 +46,7 @@ export class ItemsList {
 	}
 
 	get maxItemsSelected(): boolean {
-		return this._ngSelect.multiple && (this._ngSelect.maxSelectedItems || 0) <= this.selectedItems.length;
+		return this._ngSelect.multiple && this._ngSelect.maxSelectedItems <= this.selectedItems.length;
 	}
 
 	get lastSelectedItem() {
@@ -68,7 +67,7 @@ export class ItemsList {
 			this._items = this._flatten(this._groups);
 		} else {
 			this._groups = new Map();
-			this._groups.set('', this._items);
+			this._groups.set(undefined, this._items);
 		}
 		this._filteredItems = [...this._items];
 	}
@@ -98,16 +97,15 @@ export class ItemsList {
 		}
 	}
 
-	findItem(value: any): NgOption | undefined {
+	findItem(value: any): NgOption {
 		let findBy: (item: NgOption) => boolean;
 		if (this._ngSelect.compareWith) {
-			findBy = (item) => this._ngSelect.compareWith?(item.value, value) || item.value === value : item.value === value;
+			findBy = (item) => this._ngSelect.compareWith(item.value, value);
 		} else if (this._ngSelect.bindValue) {
-			findBy = (item) => !item.children && this.resolveNested(item.value, this._ngSelect.bindValue!) === value;
+			findBy = (item) => !item.children && this.resolveNested(item.value, this._ngSelect.bindValue) === value;
 		} else {
-			// TODO: What is this?
-			// findBy = (item) => 
-				// item.value === value || (item.children && item.label && item.label === this.resolveNested(value, this._ngSelect.bindLabel));
+			findBy = (item) =>
+				item.value === value || (!item.children && item.label && item.label === this.resolveNested(value, this._ngSelect.bindLabel));
 		}
 		return this._items.find((item) => findBy(item));
 	}
@@ -133,7 +131,7 @@ export class ItemsList {
 	findByLabel(term: string) {
 		term = searchHelper.stripSpecialChars(term).toLocaleLowerCase();
 		return this.filteredItems.find((item) => {
-			const label = searchHelper.stripSpecialChars(item.label || '').toLocaleLowerCase();
+			const label = searchHelper.stripSpecialChars(item.label).toLocaleLowerCase();
 			return label.substr(0, term.length) === term;
 		});
 	}
@@ -149,14 +147,14 @@ export class ItemsList {
 		const match = this._ngSelect.searchFn || this._defaultSearchFn;
 		const hideSelected = this._ngSelect.hideSelected;
 
-		for (const key of Array.from(this._groups?.keys() || [])) {
+		for (const key of Array.from(this._groups.keys())) {
 			const matchedItems = [];
-			for (const item of this._groups?.get(key) || []) {
+			for (const item of this._groups.get(key)) {
 				if (hideSelected && ((item.parent && item.parent.selected) || item.selected)) {
 					continue;
 				}
 				const searchItem = this._ngSelect.searchFn ? item.value : item;
-				if (searchItem instanceof NgOptionComponent && match(term, searchItem)) {
+				if (match(term, searchItem)) {
 					matchedItems.push(item);
 				}
 			}
@@ -164,9 +162,7 @@ export class ItemsList {
 				const [last] = matchedItems.slice(-1);
 				if (last.parent) {
 					const head = this._items.find((x) => x === last.parent);
-					if (head) {
-						this._filteredItems.push(head);
-					}
+					this._filteredItems.push(head);
 				}
 				this._filteredItems.push(...matchedItems);
 			}
@@ -233,8 +229,8 @@ export class ItemsList {
 		}
 	}
 
-	mapItem(item: any, index: number | undefined): NgOption {
-		const label = isDefined(item.$ngOptionLabel) ? item.$ngOptionLabel : this.resolveNested(item, this._ngSelect.bindLabel || '');
+	mapItem(item: any, index: number): NgOption {
+		const label = isDefined(item.$ngOptionLabel) ? item.$ngOptionLabel : this.resolveNested(item, this._ngSelect.bindLabel);
 		const value = isDefined(item.$ngOptionValue) ? item.$ngOptionValue : item;
 		return {
 			index,
@@ -273,14 +269,14 @@ export class ItemsList {
 				this._filteredItems.push(child);
 			}
 		}
-		this._filteredItems = [...this._filteredItems.sort((a, b) => a.index! - b.index!)];
+		this._filteredItems = [...this._filteredItems.sort((a, b) => a.index - b.index)];
 	}
 
 	private _hideSelected(item: NgOption) {
 		this._filteredItems = this._filteredItems.filter((x) => x !== item);
 		if (item.parent) {
 			const children = item.parent.children;
-			if (children?.every((x) => x.selected)) {
+			if (children.every((x) => x.selected)) {
 				this._filteredItems = this._filteredItems.filter((x) => x !== item.parent);
 			}
 		} else if (item.children) {
@@ -289,7 +285,7 @@ export class ItemsList {
 	}
 
 	private _defaultSearchFn(search: string, opt: NgOption) {
-		const label = searchHelper.stripSpecialChars(opt.label!).toLocaleLowerCase();
+		const label = searchHelper.stripSpecialChars(opt.label).toLocaleLowerCase();
 		return label.indexOf(search) > -1;
 	}
 
@@ -320,7 +316,7 @@ export class ItemsList {
 			return -1;
 		}
 
-		const selectedIndex = this._filteredItems.indexOf(this.lastSelectedItem!);
+		const selectedIndex = this._filteredItems.indexOf(this.lastSelectedItem);
 		if (this.lastSelectedItem && selectedIndex < 0) {
 			return -1;
 		}
@@ -335,9 +331,9 @@ export class ItemsList {
 		}
 
 		// Check if items are already grouped by given key.
-		if (items.length > 0 && typeof prop === 'string' &&  Array.isArray((items[0].value as any)[prop])) {
+		if (Array.isArray(items[0].value[<string>prop])) {
 			for (const item of items) {
-				const children = ((item.value! as any)[prop] || []).map((x: any, index: number) => this.mapItem(x, index));
+				const children = (item.value[<string>prop] || []).map((x, index) => this.mapItem(x, index));
 				groups.set(item, children);
 			}
 			return groups;
@@ -345,7 +341,7 @@ export class ItemsList {
 
 		const isFnKey = isFunction(this._ngSelect.groupBy);
 		const keyFn = (item: NgOption) => {
-			const key = isFnKey ? (<(value: any) => any>prop)(item.value) : item.value![prop as keyof typeof item.value];
+			const key = isFnKey ? (<(value: any) => any>prop)(item.value) : item.value[<string>prop];
 			return isDefined(key) ? key : undefined;
 		};
 
@@ -382,7 +378,7 @@ export class ItemsList {
 			const parent: NgOption = {
 				label: isObjectKey ? '' : String(key),
 				children: undefined,
-				parent: undefined,
+				parent: null,
 				index: i++,
 				disabled: !this._ngSelect.selectableGroup,
 				htmlId: newId(),
@@ -394,9 +390,9 @@ export class ItemsList {
 					if (isObjectKey) {
 						return (<NgOption>key).value;
 					}
-					return { [groupKey!]: key };
+					return { [groupKey]: key };
 				});
-			const children = groups.get(key)?.map((x) => {
+			const children = groups.get(key).map((x) => {
 				x.parent = parent;
 				x.children = undefined;
 				x.index = i++;
@@ -405,10 +401,10 @@ export class ItemsList {
 			parent.children = children;
 			parent.value = groupValue(
 				key,
-				children!.map((x) => x.value),
+				children.map((x) => x.value),
 			);
 			items.push(parent);
-			items.push(...children!);
+			items.push(...children);
 		}
 		return items;
 	}

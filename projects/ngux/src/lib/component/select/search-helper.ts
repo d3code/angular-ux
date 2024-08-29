@@ -1,4 +1,4 @@
-const diacritics: any = {
+const diacritics = {
 	'\u24B6': 'A',
 	'\uFF21': 'A',
 	'\u00C0': 'A',

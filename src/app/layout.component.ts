@@ -63,7 +63,6 @@ export class LayoutComponent {
       basePath: '/theme',
       children: [
         { label: 'Theme', path: '/theme' },
-        { label: 'Code', path: '/code' },
         { label: 'Colors', path: '/colors' },
         { label: 'Dark Mode', path: '/darkmode' },
         { label: 'Icons', path: '/icons' },
@@ -87,7 +86,10 @@ export class LayoutComponent {
       basePath: '/component',
       children: [
         { label: 'Accordion', path: '/accordion' },
+        { label: 'Code', path: '/code' },
         { label: 'Collapse', path: '/collapse' },
+        { label: 'Datepicker', path: '/datepicker' },
+        { label: 'Dialog', path: '/dialog' },
         { label: 'Dropdown', path: '/dropdown' },
         { label: 'Modal', path: '/modal' },
         { label: 'Sheet', path: '/sheet' },

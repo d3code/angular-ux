@@ -1,6 +1,17 @@
 {
   "name": "ngux",
+  "version": "0.0.10",
   "description": "Angular UX Library",
+  "author": "Luke Sands",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d3code/angular-ux"
+  },
+  "bugs": {
+    "url": "https://github.com/d3code/angular-ux/issues"
+  },
+  "homepage": "https://d3code.github.io/angular-ux/",
   "keywords": [
     "angular",
     "ux",
@@ -29,7 +40,6 @@
     "desktop",
     "tablet"
   ],
-  "version": "0.0.8",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0"
@@ -39,7 +49,7 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": {
+    "./assets/styles/ngux": {
       "sass": "./assets/styles/ngux.scss"
     },
     "./public-api.ts": {

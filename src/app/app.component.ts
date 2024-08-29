@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DarkmodeService } from '../../projects/ngux/src/lib/component/darkmode/darkmode.service';
 
@@ -11,11 +11,11 @@ import { DarkmodeService } from '../../projects/ngux/src/lib/component/darkmode/
   `,
   styles: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-libs';
   darkMode = inject(DarkmodeService);
 
-  constructor() {
+  ngOnInit() {
     this.darkMode.init();
   }
 }

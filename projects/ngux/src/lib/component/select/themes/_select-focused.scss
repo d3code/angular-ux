@@ -1,0 +1,7 @@
+.ng-select {
+	&.ng-select-focused {
+		&:not(.ng-select-opened) > .ng-select-container {
+			border-color: var(--input-border-color);
+		}
+	}
+}

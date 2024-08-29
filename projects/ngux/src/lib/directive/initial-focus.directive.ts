@@ -1,13 +1,20 @@
-import { AfterContentChecked, AfterContentInit, Directive, ElementRef, HostBinding, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, inject } from '@angular/core';
 
 @Directive({
   selector: '[initialFocus]',
-  standalone: true
+  standalone: true,
 })
-export class InitialFocusDirective implements AfterContentChecked {
+export class InitialFocusDirective implements AfterViewInit {
   elementRef = inject(ElementRef);
 
-  ngAfterContentChecked(): void {
+  ngAfterViewInit(): void {
+    if (this.elementRef.nativeElement.tagName === 'NG-SELECT') {
+      (this.elementRef.nativeElement as HTMLElement)
+        .querySelector('input')
+        ?.focus();
+      return;
+    }
+
     this.elementRef.nativeElement.focus();
   }
 }

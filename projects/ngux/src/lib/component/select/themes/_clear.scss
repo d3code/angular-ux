@@ -1,0 +1,15 @@
+.ng-select {
+  .ng-clear-wrapper {
+    cursor: pointer;
+    user-select: none;
+    width: 24px;
+    margin-right: 4px;
+  }
+  .ng-clear:hover {
+    color: var(--color-red-600) !important;
+  }
+
+  .ng-clear {
+    color: var(--input-placeholder-color);
+  }
+}

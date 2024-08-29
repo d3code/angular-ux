@@ -15,6 +15,9 @@ import { FormPage } from './page/form/form.page';
 import { IntroductionPage } from './page/getting-started/introduction.page';
 import { VariablesPage } from './page/theme/variables.page';
 import { MenuPage } from './page/navigation/menu.page';
+import { DatepickerPage } from './page/component/datepicker.page';
+import { DialogPage } from './page/component/dialog.page';
+import { TypographyPage } from './page/theme/typography.page';
 
 export const routes: Routes = [
   {
@@ -42,12 +45,12 @@ export const routes: Routes = [
             component: DarkmodePage,
           },
           {
-            path: 'icons',
-            component: IconsPage,
+            path: 'typography',
+            component: TypographyPage,
           },
           {
-            path: 'code',
-            component: CodePage,
+            path: 'icons',
+            component: IconsPage,
           },
           {
             path: 'variables',
@@ -65,6 +68,35 @@ export const routes: Routes = [
           {
             path: 'card',
             component: CardPage,
+          },
+          {
+            path: 'sheet',
+            component: SheetPage,
+          },
+        ],
+      },
+      {
+        path: 'component',
+        children: [
+          {
+            path: 'accordion',
+            component: AccordionPage,
+          },
+          {
+            path: 'card',
+            component: CardPage,
+          },
+          {
+            path: 'code',
+            component: CodePage,
+          },
+          {
+            path: 'datepicker',
+            component: DatepickerPage,
+          },
+          {
+            path: 'dialog',
+            component: DialogPage,
           },
           {
             path: 'sheet',

@@ -4,14 +4,17 @@
 	[class.ng-has-value]="hasValue"
 	class="ng-select-container">
 	<div class="ng-value-container">
-		<div class="ng-placeholder">{{ placeholder }}</div>
+		
+		@if (selectedItems.length === 0) {
+			<div class="ng-placeholder">{{ placeholder }}</div>
+		}
 
 		@if ((!multiLabelTemplate || !multiple) && selectedItems.length > 0) {
 			@for (item of selectedItems; track trackByOption($index, item)) {
 				<div [class.ng-value-disabled]="item.disabled" class="ng-value">
 					<ng-template #defaultLabelTemplate>
 						<span class="ng-value-icon left" (click)="unselect(item)" aria-hidden="true">×</span>
-						<span class="ng-value-label" [ngItemLabel]="item.label!" [escape]="escapeHTML"></span>
+						<span class="ng-value-label" [ngItemLabel]="item.label" [escape]="escapeHTML"></span>
 					</ng-template>
 					<ng-template
 						[ngTemplateOutlet]="labelTemplate || defaultLabelTemplate"
@@ -45,10 +48,10 @@
 				(focus)="onInputFocus($event)"
 				(blur)="onInputBlur($event)"
 				(change)="$event.stopPropagation()"
-				[attr.aria-activedescendant]="isOpen ? itemsList.markedItem.htmlId : null"
+				[attr.aria-activedescendant]="isOpen ? itemsList?.markedItem?.htmlId : null"
 				aria-autocomplete="list"
 				[attr.aria-controls]="isOpen ? dropdownId : null" />
-		</div>
+	  </div>
 	</div>
 
 	@if (loading) {
@@ -60,12 +63,12 @@
 
 	@if (showClear()) {
 		<span class="ng-clear-wrapper" tabindex="0" title="{{ clearAllText }}" #clearButton>
-			<span class="ng-clear" aria-hidden="true">×</span>
+			<ux-icon  class="ng-clear" name="close" [weight]="300" size="sm"></ux-icon>
 		</span>
 	}
 
 	<span class="ng-arrow-wrapper">
-		<span class="ng-arrow"></span>
+		<ux-icon class="ng-arrow" name="chevron_right" [rotate]="isOpen ? 90 : -90" [weight]="300" size="sm"></ux-icon>
 	</span>
 </div>
 
@@ -74,11 +77,11 @@
 		[class]="dropdownPanelStaticClasses"
 		[virtualScroll]="virtualScroll"
 		[bufferAmount]="bufferAmount"
-		[appendTo]="appendTo!"
+		[appendTo]="appendTo"
 		[position]="dropdownPosition"
-		[headerTemplate]="headerTemplate!"
-		[footerTemplate]="footerTemplate!"
-		[filterValue]="searchTerm!"
+		[headerTemplate]="headerTemplate"
+		[footerTemplate]="footerTemplate"
+		[filterValue]="searchTerm"
 		[items]="itemsList.filteredItems"
 		[markedItem]="itemsList.markedItem"
 		(update)="viewPortItems = $event"
@@ -106,7 +109,7 @@
 					[attr.aria-selected]="item.selected"
 					[attr.id]="item?.htmlId">
 					<ng-template #defaultOptionTemplate>
-						<span class="ng-option-label" [ngItemLabel]="item.label!" [escape]="escapeHTML"></span>
+						<span class="ng-option-label" [ngItemLabel]="item.label" [escape]="escapeHTML"></span>
 					</ng-template>
 					<ng-template
 						[ngTemplateOutlet]="

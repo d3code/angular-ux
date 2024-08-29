@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, Input, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
 import hljs from 'highlight.js';
 
 @Component({
@@ -10,14 +10,14 @@ import hljs from 'highlight.js';
       <code [class.code-block]="!inline" class="hljs" [class.pre]="!inline"></code>
   `,
 })
-export class CodeComponent implements AfterViewInit {
+export class CodeComponent implements OnChanges {
   elementRef = inject(ElementRef);
   
   @Input({required: true}) code: string = '';
   @Input() language: string = '';
   @Input() inline: boolean = false;
 
-  ngAfterViewInit(): void {
+  ngOnChanges(): void {
     const pre = this.elementRef.nativeElement.querySelector('code');
 
     if (this.language) {

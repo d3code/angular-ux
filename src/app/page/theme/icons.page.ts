@@ -42,7 +42,7 @@ import { default as iconVersions } from '../../../../projects/ngux/src/lib/compo
               [weight]="weight"
               [style]="iconStyleValue"
               [spin]="false"
-              [rotate]="0"
+              [rotate]="rotate"
             ></ux-icon>
             <div class="mt-8">
               <small>{{ icon.key }}</small>
@@ -84,6 +84,16 @@ import { default as iconVersions } from '../../../../projects/ngux/src/lib/compo
           />
         </div>
         <div class="mt-4">
+          <label>Rotate: {{rotate}}</label>
+          <input
+            type="range"
+            min="-360"
+            max="360"
+            step="1"
+            [(ngModel)]="rotate"
+          />
+        </div>
+        <div class="mt-4">
           <label>Page Size: {{pagination.pageSize}}</label>
           <input
             type="range"
@@ -120,6 +130,7 @@ export class IconsPage {
   iconSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 = 7;
   weight: any = 200;
   style: 1 | 2 | 3 = 1;
+  rotate: number = 0;
 
   get iconSizeValue(): any {
     return ICON_SIZES[this.iconSize];

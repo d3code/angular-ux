@@ -18,6 +18,7 @@ import {
 	NgTypeToSearchTemplateDirective,
 } from './ng-templates.directive';
 import { DefaultSelectionModelFactory } from './selection-model';
+import { IconModule } from '../icon/icon.module';
 
 @NgModule({
 	declarations: [
@@ -37,7 +38,7 @@ import { DefaultSelectionModelFactory } from './selection-model';
 		NgLoadingSpinnerTemplateDirective,
 		NgItemLabelDirective,
 	],
-	imports: [CommonModule],
+	imports: [CommonModule, IconModule],
 	exports: [
 		NgSelectComponent,
 		NgOptionComponent,
