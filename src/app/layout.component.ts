@@ -24,11 +24,11 @@ import { MenuLayoutComponent } from '../../projects/ngux/src/lib/component/menu/
   ],
   template: `
     <div class="flex-row align-space-between bg-primary px-4 py-2">
-      <div class="text-white">
+      <div>
         <span class="pl-2 font-weight-400 text-lg">Angular UX</span>
         <span class="pl-4"><small>ngux</small></span>
       </div>
-      <div class="">
+      <div>
         <a href="https://www.npmjs.com/package/ngux" target="_blank" class="btn btn-md btn-primary mr-0">
           <fa-icon [icon]="faNpm" size="xl"></fa-icon>
         </a>
