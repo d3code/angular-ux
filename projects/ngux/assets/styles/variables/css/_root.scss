@@ -10,12 +10,12 @@
 :root,
 [data-color-scheme=light] {
   --color-text: #{get-color-shade("light", "gray", 30%)};
-  --color-background: #{get-color-shade("light", "gray", -99%)};
+  --color-background: #{get-color-shade("light", "gray", -98%)};
   --color-surface: #{get-color-shade("light", "gray", -85%)};
 }
 
 [data-color-scheme=dark] {
-  --color-text: #{get-color-shade("dark", "gray", -75%)};
+  --color-text: #{get-color-shade("dark", "gray", -62%)};
   --color-background: #{get-color-shade("dark", "gray", 57%)};
   --color-surface: #{get-color-shade("dark", "gray", 52%)};
 }

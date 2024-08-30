@@ -114,19 +114,19 @@ const ICON_DEFAULTS = {
     top: 0.2,
   },
   'sm': {
-    size: 1.4,
+    size: 1.3,
     opticalSize: 20,
-    top: 0.30,
+    top: 0.34,
   },
   'md': {
     size: 1.6,
     opticalSize: 24,
-    top: 0.4,
+    top: 0.44,
   },
   'lg': {
     size: 2.2,
     opticalSize: 40,
-    top: 0.65,
+    top: 0.64,
   },
   'xl': {
     size: 2.6,

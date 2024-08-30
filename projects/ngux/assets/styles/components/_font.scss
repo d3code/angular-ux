@@ -1,0 +1,31 @@
+@use "sass:map";
+
+:root {
+  color: var(--color-text);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: var(--line-height);
+}
+
+.font-weight-light {
+  font-weight: 100 !important;
+}
+.font-weight-normal {
+  font-weight: 300 !important;
+}
+.font-weight-bold {
+  font-weight: 400 !important;
+}
+
+@for $i from 1 through 9 {
+  .font-weight-#{$i}00 {
+    font-weight: #{$i}00;
+  }
+}

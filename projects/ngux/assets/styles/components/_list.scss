@@ -1,0 +1,32 @@
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+ul {
+  padding: 1rem 2rem;
+  margin: 0;
+}
+
+
+.list-none, .list-plain {
+  list-style-type: none;
+}
+
+.list-inline {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-inline > li {
+  display: inline;
+}

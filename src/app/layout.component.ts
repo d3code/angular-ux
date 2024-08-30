@@ -89,7 +89,6 @@ export class LayoutComponent {
         { label: 'Code', path: '/code' },
         { label: 'Collapse', path: '/collapse' },
         { label: 'Datepicker', path: '/datepicker' },
-        { label: 'Dialog', path: '/dialog' },
         { label: 'Dropdown', path: '/dropdown' },
         { label: 'Modal', path: '/modal' },
         { label: 'Sheet', path: '/sheet' },

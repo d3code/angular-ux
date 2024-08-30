@@ -1,0 +1,68 @@
+@use "sass:map";
+
+.btn,
+.btn-default,
+button {
+
+  border-radius: var(--button-border-radius);
+
+  color: var(--button-default-color);
+  background-color: var(--button-default-background-color);
+  border: 1px solid var(--button-default-border-color);
+
+  &:hover {
+    color: var(--button-default-hover-color);
+    border-color: var(--button-default-hover-border-color);
+    background-color: var(--button-default-hover-background-color);
+  }
+}
+
+
+// Button sizes
+
+.btn,
+.btn-md,
+button {
+  font-size: var(--button-md-font-size);
+  padding: var(--button-md-padding-y) var(--button-md-padding-x);
+}
+
+.btn-sm {
+  font-size: var(--button-sm-font-size);
+  padding: var(--button-sm-padding-y) var(--button-sm-padding-x);
+}
+
+.btn-lg {
+  font-size: var(--button-lg-font-size);
+  padding: var(--button-lg-padding-y) var(--button-lg-padding-x);
+}
+
+
+// Button colors
+
+@each $color, $value in $theme-color-names {
+
+  .btn-#{$color} {
+    color: var(--button-#{$color}-color);
+    border-color: var(--button-#{$color}-border-color);
+    background-color: var(--button-#{$color}-background-color);
+
+    &.active {
+      color: var(--button-#{$color}-active-color);
+      border-color: var(--button-#{$color}-active-border-color);
+      background-color: var(--button-#{$color}-active-background-color);
+    }
+
+    &:disabled {
+      color: var(--button-#{$color}-disabled-color);
+      border-color: var(--button-#{$color}-disabled-border-color);
+      background-color: var(--button-#{$color}-disabled-background-color);
+    }
+  
+    &:hover {
+      color: var(--button-#{$color}-hover-color);
+      border-color: var(--button-#{$color}-hover-border-color);
+      background-color: var(--button-#{$color}-hover-background-color);
+    }
+  }
+}

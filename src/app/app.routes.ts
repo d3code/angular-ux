@@ -16,7 +16,7 @@ import { IntroductionPage } from './page/getting-started/introduction.page';
 import { VariablesPage } from './page/theme/variables.page';
 import { MenuPage } from './page/navigation/menu.page';
 import { DatepickerPage } from './page/component/datepicker.page';
-import { DialogPage } from './page/component/dialog.page';
+import { ModalPage } from './page/component/modal.page';
 import { TypographyPage } from './page/theme/typography.page';
 
 export const routes: Routes = [
@@ -95,8 +95,8 @@ export const routes: Routes = [
             component: DatepickerPage,
           },
           {
-            path: 'dialog',
-            component: DialogPage,
+            path: 'modal',
+            component: ModalPage,
           },
           {
             path: 'sheet',

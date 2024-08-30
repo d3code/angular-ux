@@ -9,6 +9,14 @@ import hljs from 'highlight.js';
   template: `
       <code [class.code-block]="!inline" class="hljs" [class.pre]="!inline"></code>
   `,
+  styles: `
+    .code-block {
+      display: block;
+      white-space: pre;
+      padding: 1rem 1.4rem;
+      margin-block: 1rem;
+    }
+  `
 })
 export class CodeComponent implements OnChanges {
   elementRef = inject(ElementRef);

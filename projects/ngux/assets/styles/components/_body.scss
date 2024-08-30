@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  /* Explicitly set text alignment and line height so that we can later use the `inherit` value on things like `<th>` elements */
+  text-align: left;
+  line-height: var(--line-height);
+}

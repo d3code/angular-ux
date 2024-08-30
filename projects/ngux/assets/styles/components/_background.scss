@@ -1,0 +1,15 @@
+@use "sass:map";
+
+@each $color, $value in $theme-color-names {
+  .bg-#{$color} {
+    background-color: var(--ux-color-#{$color});
+  }
+}
+
+@each $color, $value in $colors {
+  @for $i from 1 through 9 {
+    .bg-#{$color}-#{$i}00 {
+      background-color: var(--color-#{$color}-#{$i}00);
+    }
+  }
+}

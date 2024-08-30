@@ -28,7 +28,7 @@
   --input-border-color: #{get-color-shade("dark", "gray", 38%)};
   --input-background-color: #{get-color-shade("dark", "gray", 66%)};
 
-  --input-placeholder-color: #{get-color-shade("dark", "gray", 20%)};
+  --input-placeholder-color: #{get-color-shade("dark", "gray", 0)};
 
   --input-select-selected-color: #{get-color-shade("dark", "gray", -100%)};
   --input-select-selected-background-color: #{get-color-shade("dark", "blue", 0%)};

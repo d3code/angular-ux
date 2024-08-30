@@ -2,14 +2,32 @@
 
 :root {
   --button-border-radius: #{$border-radius};
+
+  --button-sm-font-size: 0.9rem;
+  --button-sm-padding-x: 0.8rem;
+  --button-sm-padding-y: 0.4rem;
+
+  --button-md-font-size: 1rem;
+  --button-md-padding-x: 1rem;
+  --button-md-padding-y: 0.6rem;
+
+  --button-lg-font-size: 1.2rem;
+  --button-lg-padding-x: 1.2rem;
+  --button-lg-padding-y: 0.8rem;
 }
 
 :root,
-[data-color-scheme=light] {
+[data-color-scheme="light"] {
+  --button-default-color: #{get-color-shade("light", "gray", 40%)};
+  --button-default-border-color: #{get-color-shade("light", "gray", -80%)};
+  --button-default-background-color: #{get-color-shade("light", "gray", -80%)};
+
+  --button-default-hover-color: #{get-color-shade("light", "gray", 40%)};
+  --button-default-hover-border-color: #{get-color-shade("light", "gray", -80%)};
+  --button-default-hover-background-color: #{get-color-shade("light", "gray", -70%)};
 
   $light-theme-colors: map-get($theme-colors, "light");
   @each $color, $value in $light-theme-colors {
-
     --button-#{$color}-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-background-color: #{shift-color($value, 0%)};
@@ -17,7 +35,7 @@
     --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-disabled-border-color: #{shift-color($value, -35%)};
     --button-#{$color}-disabled-background-color: #{shift-color($value, -35%)};
-    
+
     --button-#{$color}-active-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-active-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-active-background-color: #{shift-color($value, 20%)};
@@ -28,11 +46,17 @@
   }
 }
 
-[data-color-scheme=dark] {
+[data-color-scheme="dark"] {
+  --button-default-color: #{get-color-shade("dark", "gray", -60%)};
+  --button-default-border-color: #{get-color-shade("dark", "gray", 40%)};
+  --button-default-background-color: #{get-color-shade("dark", "gray", 40%)};
+
+  --button-default-hover-color: #{get-color-shade("dark", "gray", -60%)};
+  --button-default-hover-border-color: #{get-color-shade("dark", "gray", 40%)};
+  --button-default-hover-background-color: #{get-color-shade("dark", "gray", 50%)};
 
   $dark-theme-colors: map-get($theme-colors, "dark");
   @each $color, $value in $dark-theme-colors {
-
     --button-#{$color}-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-background-color: #{shift-color($value, 0%)};
@@ -40,7 +64,7 @@
     --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-disabled-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-disabled-background-color: #{shift-color($value, 50%)};
-    
+
     --button-#{$color}-active-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-active-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-active-background-color: #{shift-color($value, -20%)};

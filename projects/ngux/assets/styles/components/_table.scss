@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+  /* Prevent double borders */
+  border-collapse: collapse;
+}
+
+th {
+  /* Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align` */
+  text-align: inherit;
+}
+
+
+table {
+  thead {
+    border-bottom: 1px solid var(--color-grey-2);
+  }
+
+  th {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  th,
+  td {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    vertical-align: middle;
+  }
+}
+
+table.hover {
+  tr:hover {
+    background-color: var(--color-grey-200);
+  }
+}

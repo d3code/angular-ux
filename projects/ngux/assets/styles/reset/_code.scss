@@ -1,0 +1,20 @@
+pre,
+code,
+kbd,
+samp {
+  /* Correct the inheritance and scaling of font size in all browsers */
+  font-family: monospace, monospace;
+  /* Correct the odd `rem` font sizing in all browsers */
+  font-size: 1rem;
+}
+
+
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+
+  /* Scrollbars overlap content in IE11 and Edge, force a non-overlapping, non-auto-hiding scrollbar to counteract */
+  -ms-overflow-style: scrollbar;
+}
+

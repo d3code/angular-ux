@@ -1,21 +1,15 @@
 .ng-select {
   &.ng-select-multiple {
     .ng-select-container {
-
-
 			input {
 				padding-inline: 6px;
 			}
-
       .ng-value-container {
-
         .ng-value {
           font-size: 0.9rem;
           padding: 3px;
-
           color: var(--input-color);
           background-color: var(--color-gray-200);
-
           border-radius: 2px;
 
           .ng-value-label {

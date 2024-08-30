@@ -7,7 +7,7 @@
 
 // Shade a color: mix a color with black
 @function shade-color($color, $weight) {
-  @return mix(black, $color, $weight);
+  @return mix(black, $color, $weight * 1%);
 }
 
 // Shade the color if the weight is positive, else tint it
