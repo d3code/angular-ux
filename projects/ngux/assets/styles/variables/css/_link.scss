@@ -1,11 +1,24 @@
 :root,
-[data-theme-scheme=light] {
-  --color-link:  var(--color-blue-500);
-  --color-link-hover:  var(--color-gray-600);
+[data-color-scheme=light] {
+
+  --link-color:  var(--color-gray-900);
+  --link-color-hover:  var(--color-blue-600);
+
+  $light-theme-colors: map-get($theme-colors, "light");
+  @each $color, $value in $light-theme-colors {
+    --link-#{$color}-color:  var(--color-blue-600);
+    --link-#{$color}-color-hover:  var(--color-gray-300);
+  }
 }
 
-:root,
-[data-theme-scheme=dark] {
-  --color-link:  var(--color-blue-600);
-  --color-link-hover:  var(--color-gray-300);
+[data-color-scheme=dark] {
+
+  --link-color:  var(--color-blue-600);
+  --link-color-hover:  var(--color-gray-300);
+
+  $dark-theme-colors: map-get($theme-colors, "dark");
+  @each $color, $value in $dark-theme-colors {
+    --link-#{$color}-color:  var(--color-blue-600);
+    --link-#{$color}-color-hover:  var(--color-gray-300);
+  }
 }

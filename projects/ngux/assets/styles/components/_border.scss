@@ -1,5 +1,9 @@
 @use "sass:map";
 
+.border-transparent {
+  border-color: transparent;
+}
+
 @each $color, $value in $theme-color-names {
   .border-#{$color} {
     border-color: var(--color-#{$color});

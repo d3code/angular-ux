@@ -1,8 +1,8 @@
 a {
   text-decoration: none;
-  color: var(--color-link);
+  color: var(--link-color);
   
   &:hover {
-    color: var(--color-link-hover);
+    color: var(--link-color-hover);
   }
 }

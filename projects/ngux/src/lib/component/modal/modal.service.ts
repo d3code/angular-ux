@@ -11,7 +11,7 @@ import { NgbModalStack } from './modal-stack';
  * the `.open()` method.
  */
 @Injectable({ providedIn: 'root' })
-export class NgbModal {
+export class ModalService {
 	private _injector = inject(Injector);
 	private _modalStack = inject(NgbModalStack);
 	private _config = inject(NgbModalConfig);

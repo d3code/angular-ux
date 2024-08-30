@@ -1,5 +1,9 @@
 @use "sass:map";
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 @each $color, $value in $theme-color-names {
   .bg-#{$color} {
     background-color: var(--ux-color-#{$color});

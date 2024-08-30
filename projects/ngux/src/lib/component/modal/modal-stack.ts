@@ -79,7 +79,7 @@ export class NgbModalStack {
 			throw new Error(`The specified modal container "${options.container || 'body'}" was not found in the DOM.`);
 		}
 
-		// this._hideScrollBar();
+		this._hideScrollBar();
 
 		const activeModal = new NgbActiveModal();
 

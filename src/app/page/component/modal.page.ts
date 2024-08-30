@@ -1,5 +1,5 @@
 import { Component, inject, TemplateRef } from '@angular/core';
-import { ModalDismissReasons, ModalModule, NgbModal } from '../../../../projects/ngux/src/lib/component/modal/modal.module';
+import { ModalDismissReasons, ModalModule, ModalService } from '../../../../projects/ngux/src/lib/component/modal/modal.module';
 import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/icon.module';
 
 
@@ -20,9 +20,9 @@ import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/ico
     <ng-template #content let-modal>
       <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-        <button type="button" class="btn btn-md" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <ux-icon size="md" name="close"></ux-icon>
-        </button>
+        <a class="p-2" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <ux-icon size="sm" name="close" [weight]="300"></ux-icon>
+        </a>
       </div>
       <div class="modal-body">
         <p>One fine body…</p>
@@ -35,7 +35,7 @@ import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/ico
   styles: ``
 })
 export class ModalPage {
-  private modalService = inject(NgbModal);
+  private modalService = inject(ModalService);
 	closeResult = '';
 
   open(content: TemplateRef<any>) {

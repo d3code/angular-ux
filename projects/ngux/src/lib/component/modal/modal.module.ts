@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { NgbModal } from './modal';
+import { ModalService } from './modal.service';
 
-export { NgbModal } from './modal';
+export { ModalService } from './modal.service';
 export { NgbModalConfig, NgbModalOptions, NgbModalUpdatableOptions } from './modal-config';
 export { NgbModalRef, NgbActiveModal } from './modal-ref';
 export { ModalDismissReasons } from './modal-dismiss-reasons';
 
-@NgModule({ providers: [NgbModal] })
+@NgModule({ providers: [ModalService] })
 export class ModalModule {}
