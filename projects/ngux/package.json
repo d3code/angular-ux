@@ -46,7 +46,8 @@
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "@popperjs/core": "2.11.8"
   },
   "sideEffects": false,
   "exports": {
