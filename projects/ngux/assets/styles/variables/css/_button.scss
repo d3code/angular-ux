@@ -58,7 +58,7 @@
   $dark-theme-colors: map-get($theme-colors, "dark");
   @each $color, $value in $dark-theme-colors {
     --button-#{$color}-color: #{contrast-color($value, #333, #fff)};
-    --button-#{$color}-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-border-color: #{shift-color($value, 100%)};
     --button-#{$color}-background-color: #{shift-color($value, 0%)};
 
     --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/icon.module';
 import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
+import { ButtonComponent } from '../../../../projects/ngux/src/lib/component/button/button.component';
+import { ButtonGroupComponent } from '../../../../projects/ngux/src/lib/component/button/button-group.component';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [IconModule, CodeComponent],
+  imports: [IconModule, CodeComponent, ButtonComponent, ButtonGroupComponent],
   template: `
     <h1>Button</h1>
     <p>Buttons are used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.</p>
@@ -119,13 +121,24 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
 
       <ux-code [code]="buttonThemes"></ux-code>
     </div>
+
+    <!-- Group -->
+    <div id="button-group">
+      <h2>Button Group</h2>
+
+      <div class="btn-group">
+        <button class="btn btn-primary">Button 1</button>
+        <button class="btn btn-primary">Button 2</button>
+        <button class="btn btn-primary">Button 3</button>
+      </div>
+    </div>
   `,
   styles: `
     .example {
-      margin-block: 1rem;
-      > button {
-        margin-right: 0.6rem;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: flex-start;
     }
   `
 })

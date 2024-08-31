@@ -6,7 +6,7 @@ import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.modu
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { MenuComponent } from '../../projects/ngux/src/lib/component/menu/menu.component';
-import { MenuLayoutComponent } from '../../projects/ngux/src/lib/component/menu/menu-layout.component';
+import { MenuLayoutComponent } from '../../projects/ngux/src/lib/component/layout/menu-layout.component';
 
 @Component({
   selector: 'app-layout',
@@ -88,7 +88,7 @@ export class LayoutComponent {
         { label: 'Accordion', path: '/accordion' },
         { label: 'Code', path: '/code' },
         { label: 'Collapse', path: '/collapse' },
-        { label: 'Datepicker', path: '/datepicker' },
+        { label: 'Date Picker', path: '/datepicker' },
         { label: 'Dropdown', path: '/dropdown' },
         { label: 'Modal', path: '/modal' },
         { label: 'Sheet', path: '/sheet' },
@@ -117,8 +117,6 @@ export class LayoutComponent {
       children: [
         { label: 'Button', path: '/button' },
         { label: 'Checkbox', path: '/checkbox' },
-        { label: 'Datepicker', path: '/datepicker' },
-        { label: 'Datetimepicker', path: '/datetimepicker' },
         { label: 'Form', path: '/form' },
         { label: 'Input', path: '/input' },
         { label: 'Progress', path: '/progress' },
