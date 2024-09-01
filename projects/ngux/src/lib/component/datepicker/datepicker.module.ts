@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { NgbDatepicker, NgbDatepickerContent } from './datepicker';
 import { NgbDatepickerMonth } from './datepicker';
-import { NgbInputDatepicker } from './datepicker-input';
+import { NgbInputDatepicker } from './datepicker-input.directive';
 
 export { NgbDatepicker, NgbDatepickerContent, NgbDatepickerNavigateEvent, NgbDatepickerState } from './datepicker';
-export { NgbInputDatepicker } from './datepicker-input';
+export { NgbInputDatepicker } from './datepicker-input.directive';
 export { NgbCalendar, NgbPeriod, NgbCalendarGregorian } from './ngb-calendar';
 export { NgbDatepickerMonth } from './datepicker';
 export { NgbDatepickerDayView } from './datepicker-day-view';
@@ -19,7 +19,7 @@ export { NgbDateAdapter, NgbDateStructAdapter } from './adapters/ngb-date-adapte
 export { NgbDateNativeAdapter } from './adapters/ngb-date-native-adapter';
 export { NgbDateNativeUTCAdapter } from './adapters/ngb-date-native-utc-adapter';
 export { NgbDateParserFormatter } from './ngb-date-parser-formatter';
-export { NgbDatepickerKeyboardService } from './datepicker-keyboard-service';
+export { NgbDatepickerKeyboardService } from './datepicker-keyboard.service';
 
 const NGB_DATEPICKER_DIRECTIVES = [NgbDatepicker, NgbDatepickerContent, NgbInputDatepicker, NgbDatepickerMonth];
 

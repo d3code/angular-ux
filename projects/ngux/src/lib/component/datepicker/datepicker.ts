@@ -31,14 +31,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { NgbCalendar } from './ngb-calendar';
 import { NgbDate } from './ngb-date';
-import { DatepickerServiceInputs, NgbDatepickerService } from './datepicker-service';
+import { DatepickerServiceInputs, NgbDatepickerService } from './datepicker.service';
 import { DatepickerViewModel, DayViewModel, MonthViewModel, NavigationEvent } from './datepicker-view-model';
 import { DayTemplateContext } from './datepicker-day-template-context';
 import { NgbDatepickerConfig } from './datepicker-config';
 import { NgbDateAdapter } from './adapters/ngb-date-adapter';
 import { NgbDateStruct } from './ngb-date-struct';
 import { NgbDatepickerI18n } from './datepicker-i18n';
-import { NgbDatepickerKeyboardService } from './datepicker-keyboard-service';
+import { NgbDatepickerKeyboardService } from './datepicker-keyboard.service';
 import { isChangedDate, isChangedMonth } from './datepicker-tools';
 import { NgbDatepickerDayView } from './datepicker-day-view';
 import { NgbDatepickerNavigation } from './datepicker-navigation';

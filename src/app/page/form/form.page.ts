@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgSelectModule } from '../../../../projects/ngux/src/lib/component/select/ng-select.module';
 import {
@@ -6,7 +6,10 @@ import {
   NgbDateStruct,
 } from '../../../../projects/ngux/src/lib/component/datepicker/datepicker.module';
 import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/icon.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ButtonOptionGroupComponent } from '../../../../projects/ngux/src/lib/component/button/button-option-group.component';
+import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-form',
@@ -14,9 +17,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     RouterLink,
     FormsModule,
+    JsonPipe,
     NgSelectModule,
     NgbDatepickerModule,
+    ButtonOptionGroupComponent,
     IconModule,
+    CodeComponent,
   ],
   template: `
     <h1>Form</h1>
@@ -53,15 +59,43 @@ import { FormsModule } from '@angular/forms';
           placeholder="Search"
         />
       </div>
+
+      <div class="row">
+        <ux-button-option-group 
+          [options]="buttonOptions"
+          name="opt"
+          [(ngModel)]="optGroupModel"
+        />
+      </div>
+
     </form>
+
+    <ux-code [code]="formModel | json" />
   `,
-  styles: ``,
+  styles: `
+    .row {
+      padding-bottom: 1rem;
+    }
+  `,
 })
 export class FormPage {
   model: NgbDateStruct;
+  optGroupModel: any = 1;
 
   items = [
     { id: 1, title: 'item1' },
     { id: 2, title: 'item2' },
   ];
+
+  buttonOptions = [
+    { id: 1, label: 'Option 1' },
+    { id: 2, label: 'Option 2' },
+  ];
+
+  get formModel() {
+    return {
+      date: this.model,
+      opt: this.optGroupModel
+    };
+  }
 }

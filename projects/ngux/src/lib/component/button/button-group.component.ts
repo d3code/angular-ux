@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
     </div>
   `,
   styles: `
-  `
+  `,
 })
 export class ButtonGroupComponent {
 
