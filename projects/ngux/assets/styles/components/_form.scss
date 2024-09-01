@@ -20,3 +20,116 @@ form.ng-submitted {
 .message-error {
   background-color: var(--color-red-light);
 }
+
+
+form {
+  .form-group {
+    margin-bottom: 1.6rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-gray-light);
+    border-radius: 4px;
+  }
+
+  .form-group input[type="checkbox"] {
+    width: auto;
+  }
+
+  .form-group input[type="radio"] {
+    width: auto;
+  }
+
+  .form-group input.ng-invalid,
+  .form-group select.ng-invalid,
+  .form-group textarea.ng-invalid {
+    border-color: var(--color-red);
+  }
+
+  .form-group .form-error {
+    margin-top: 0.4rem;
+  }
+
+  .form-group .message {
+    margin-top: 0.4rem;
+  }
+
+  .form-group .message-error {
+    margin-top: 0.4rem;
+  }
+
+  .form-group .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-group .form-group label {
+    margin-bottom: 0;
+  }
+
+  .form-group .form-group input,
+  .form-group .form-group select,
+  .form-group .form-group textarea {
+    width: 100%;
+  }
+
+  .form-group .form-group .form-error {
+    margin-top: 0;
+  }
+
+  .form-group .form-group .message {
+    margin-top: 0;
+  }
+
+  .form-group .form-group .message-error {
+    margin-top: 0;
+  }
+}
+
+form {
+  .input-group {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 1rem;
+
+    button {
+      background-color: var(--input-background-color);
+    }
+
+    border-radius: var(--button-border-radius);
+
+    // Prevent double borders when buttons are next to each other
+    > :not(:first-child) {
+      margin-left: -1px; // stylelint-disable-line function-disallowed-list
+    }
+  
+    // Reset rounded corners
+    > :not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    :last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  
+    // The left radius should be 0 if the button is:
+    // - the "third or more" child
+    // - the second child and the previous element isn't `.btn-check` (making it the first child visually)
+    // - part of a btn-group which isn't the first child
+    > .btn:nth-child(n + 3) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
