@@ -9,14 +9,14 @@ import { OffcanvasDismissReasons } from '../../../../projects/ngux/src/lib/compo
   template: `
     <h1>Sheet</h1>
 
-    <ng-template #content let-offcanvas>
+    <ng-template #content let-oc>
       <div class="offcanvas-header">
         <h4 class="offcanvas-title" id="offcanvas-basic-title">Profile update</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+        <button type="button" class="btn-close" aria-label="Close" (click)="oc.dismiss('Cross click')"></button>
       </div>
       <div class="offcanvas-body">
         <div class="text-end">
-          <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Save click')">Save</button>
+          <button type="button" class="btn btn-outline-secondary" (click)="oc.close('Save click')">Save</button>
         </div>
       </div>
     </ng-template>
@@ -34,7 +34,7 @@ export class SheetPage {
 	closeResult = '';
 
 	open(content: TemplateRef<any>) {
-		this.offcanvasService.open(content, { ariaLabelledBy: 'offcanvas-basic-title' }).result.then(
+		this.offcanvasService.open(content, { ariaLabelledBy: 'offcanvas-basic-title', position: 'end' }).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
 			},

@@ -81,7 +81,7 @@ import { JsonPipe } from '@angular/common';
 })
 export class FormPage {
   formGroup = new FormGroup({
-    date: new FormControl(null),
+    date: new FormControl({ year: 2021, month: 2, day: 1 }),
     select: new FormControl(null),
     option: new FormControl(1, Validators.required),
   });

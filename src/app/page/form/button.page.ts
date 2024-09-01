@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/icon.module';
 import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
-import { ButtonComponent } from '../../../../projects/ngux/src/lib/component/button/button.component';
-import { ButtonGroupComponent } from '../../../../projects/ngux/src/lib/component/button/button-group.component';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [IconModule, CodeComponent, ButtonComponent, ButtonGroupComponent],
+  imports: [IconModule, CodeComponent],
   template: `
     <h1>Button</h1>
     <p>Buttons are used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.</p>

@@ -19,6 +19,7 @@ import { DatepickerPage } from './page/component/datepicker.page';
 import { ModalPage } from './page/component/modal.page';
 import { TypographyPage } from './page/theme/typography.page';
 import { OptionGroupPage } from './page/component/option-group.page';
+import { DropdownPage } from './page/component/dropdown.page';
 
 export const routes: Routes = [
   {
@@ -94,6 +95,10 @@ export const routes: Routes = [
           {
             path: 'datepicker',
             component: DatepickerPage,
+          },
+          {
+            path: 'dropdown',
+            component: DropdownPage,
           },
           {
             path: 'modal',
