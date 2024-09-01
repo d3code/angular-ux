@@ -1,5 +1,13 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef, inject, Input } from '@angular/core';
-import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  Component,
+  forwardRef,
+  Input,
+} from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'ux-button-option-group',
@@ -10,12 +18,19 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => ButtonOptionGroupComponent),
       multi: true,
-    }
+    },
   ],
   template: `
     <div class="btn-group">
       @for (option of options; track option) {
-        <button [class.active]="val === option.id" (click)="writeValue(option.id)" class="btn btn-primary">{{ option.label }}</button>
+      <button
+        [attr.disabled]="disabled ? true : null"
+        [class.active]="value === option.id"
+        (click)="writeValue(option.id)"
+        class="btn btn-primary"
+      >
+        {{ option.label }}
+      </button>
       }
     </div>
   `,
@@ -23,33 +38,29 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
   `,
 })
 export class ButtonOptionGroupComponent implements ControlValueAccessor {
-  private _cd = inject(ChangeDetectorRef);
+  @Input() options: any;
 
-  val: any;
+  value: any;
+  disabled: boolean = false;
 
-  onChange: any = () => {}
-  onTouch: any = () => {}
+  onChange: any = () => {};
+  onTouch: any = () => {};
 
   writeValue(obj: any): void {
-    console.log('writeValue', obj);
-    this.val = obj;
+    this.value = obj;
     this.onChange(obj);
-    // this._cd.markForCheck();
+    this.onTouch(obj);
   }
+
   registerOnChange(fn: any): void {
-    console.log('registerOnChange', fn);
-    this.onChange = fn
-    
+    this.onChange = fn;
   }
+
   registerOnTouched(fn: any): void {
-    console.log('registerOnTouched', fn);
-    this.onTouch = fn
+    this.onTouch = fn;
   }
+
   setDisabledState?(isDisabled: boolean): void {
-    console.log('setDisabledState', isDisabled);
-
+    this.disabled = isDisabled;
   }
-
-
-  @Input() options: any;
 }

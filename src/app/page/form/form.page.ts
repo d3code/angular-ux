@@ -6,7 +6,7 @@ import {
   NgbDateStruct,
 } from '../../../../projects/ngux/src/lib/component/datepicker/datepicker.module';
 import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/icon.module';
-import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonOptionGroupComponent } from '../../../../projects/ngux/src/lib/component/button/button-option-group.component';
 import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
 import { JsonPipe } from '@angular/common';
@@ -17,6 +17,7 @@ import { JsonPipe } from '@angular/common';
   imports: [
     RouterLink,
     FormsModule,
+    ReactiveFormsModule,
     JsonPipe,
     NgSelectModule,
     NgbDatepickerModule,
@@ -32,14 +33,13 @@ import { JsonPipe } from '@angular/common';
       form elements available in the UX library.
     </p>
 
-    <form class="my-8">
+    <form class="my-8" [formGroup]="formGroup">
       <div class="row">
         <div class="input-group">
           <input
+            formControlName="date"
             class="form-control"
             placeholder="yyyy-mm-dd"
-            name="dp"
-            [(ngModel)]="model"
             ngbDatepicker
             #d="ngbDatepicker"
           />
@@ -52,7 +52,8 @@ import { JsonPipe } from '@angular/common';
       <div class="row">
         <ng-select
           initialFocus
-          [items]="items"
+          formControlName="select"
+          [items]="selectItems"
           bindLabel="title"
           bindValue="id"
           [searchable]="true"
@@ -62,15 +63,15 @@ import { JsonPipe } from '@angular/common';
 
       <div class="row">
         <ux-button-option-group 
-          [options]="buttonOptions"
+          [options]="optionsItems"
           name="opt"
-          [(ngModel)]="optGroupModel"
+          formControlName="option"
         />
       </div>
 
     </form>
 
-    <ux-code [code]="formModel | json" />
+    <ux-code [code]="formModel | json" language="json"/>
   `,
   styles: `
     .row {
@@ -79,23 +80,42 @@ import { JsonPipe } from '@angular/common';
   `,
 })
 export class FormPage {
-  model: NgbDateStruct;
-  optGroupModel: any = 1;
+  formGroup = new FormGroup({
+    date: new FormControl(null),
+    select: new FormControl(null),
+    option: new FormControl(1, Validators.required),
+  });
 
-  items = [
-    { id: 1, title: 'item1' },
-    { id: 2, title: 'item2' },
+  selectItems = [
+    { id: 1, title: 'Item 1' },
+    { id: 2, title: 'Item 2' },
   ];
 
-  buttonOptions = [
+  optionsItems = [
     { id: 1, label: 'Option 1' },
     { id: 2, label: 'Option 2' },
   ];
 
   get formModel() {
+    let formControls: any = {};
+
+    for (const control in this.formGroup.controls) {
+      formControls[control] = {};
+      formControls[control]['touched'] = this.formGroup.controls[control].touched
+      formControls[control]['valid'] = this.formGroup.controls[control].valid
+      formControls[control]['dirty'] = this.formGroup.controls[control].dirty
+    }
+
     return {
-      date: this.model,
-      opt: this.optGroupModel
-    };
+      form: {
+        status: this.formGroup.status,
+        errors: this.formGroup.errors,
+        valid: this.formGroup.valid,
+        dirty: this.formGroup.dirty,
+        touched: this.formGroup.touched,
+      },
+      value: this.formGroup.value,
+      controls: formControls,
+    }
   }
 }

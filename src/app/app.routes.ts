@@ -18,6 +18,7 @@ import { MenuPage } from './page/navigation/menu.page';
 import { DatepickerPage } from './page/component/datepicker.page';
 import { ModalPage } from './page/component/modal.page';
 import { TypographyPage } from './page/theme/typography.page';
+import { OptionGroupPage } from './page/component/option-group.page';
 
 export const routes: Routes = [
   {
@@ -99,6 +100,14 @@ export const routes: Routes = [
             component: ModalPage,
           },
           {
+            path: 'optiongroup',
+            component: OptionGroupPage,
+          },
+          {
+            path: 'select',
+            component: SelectPage,
+          },
+          {
             path: 'sheet',
             component: SheetPage,
           },
@@ -123,10 +132,6 @@ export const routes: Routes = [
           {
             path: 'form',
             component: FormPage,
-          },
-          {
-            path: 'select',
-            component: SelectPage,
           },
         ],
       },
