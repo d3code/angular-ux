@@ -20,7 +20,7 @@ import { CommonModule, NgFor } from '@angular/common';
             <div>
               <strong>{{ colors.title }}</strong>
             </div>
-            <div class="text-gray-900">{{ colors.description }}</div>
+            <div class="text-muted">{{ colors.description }}</div>
           </td>
           <td style="width: 224px;">
             <ux-code
@@ -111,48 +111,37 @@ export class ColorsPage {
           title: 'Primary',
           description:
             'The primary color is used for primary buttons, links, and other primary elements.',
-          variable: '--ux-color-primary',
+          variable: '--color-primary',
         },
         {
           title: 'Secondary',
           description:
             'The secondary color is used for secondary buttons, links, and other secondary elements.',
-          variable: '--ux-color-secondary',
+          variable: '--color-secondary',
         },
         {
           title: 'Success',
           description:
             'The success color is used for success messages, buttons, and other success elements.',
-          variable: '--ux-color-success',
+          variable: '--color-success',
         },
         {
           title: 'Warning',
           description:
             'The warning color is used for warning messages, buttons, and other warning elements.',
-          variable: '--ux-color-warning',
+          variable: '--color-warning',
         },
         {
           title: 'Danger',
           description:
             'The danger color is used for error messages, buttons, and other danger elements.',
-          variable: '--ux-color-danger',
+          variable: '--color-danger',
         },
         {
           title: 'Info',
           description:
             'The info color is used for informational messages, buttons, and other info elements.',
-          variable: '--ux-color-info',
-        },
-        {
-          title: 'Light',
-          description:
-            'The light color is used for light backgrounds and text.',
-          variable: '--ux-color-light',
-        },
-        {
-          title: 'Dark',
-          description: 'The dark color is used for dark backgrounds and text.',
-          variable: '--ux-color-dark',
+          variable: '--color-info',
         },
       ],
     },
@@ -170,27 +159,22 @@ export class ColorsPage {
           title: 'Surface',
           description:
             'The surface color is used for card and surface backgrounds.',
-          variable: '--color-surface',
+          variable: '--surface-color',
         },
         {
           title: 'Border',
           description: 'The border color is used for borders.',
-          variable: '--color-border',
+          variable: '--border-color',
         },
         {
           title: 'Text',
           description: 'The text color is used for text.',
-          variable: '--color-text',
+          variable: '--text-color',
         },
         {
-          title: 'Placeholder',
-          description: 'The placeholder color is used for placeholder text.',
-          variable: '--color-placeholder',
-        },
-        {
-          title: 'Disabled',
-          description: 'The disabled color is used for disabled elements.',
-          variable: '--color-disabled',
+          title: 'Muted',
+          description: 'The muted color is used for muted text.',
+          variable: '--muted-color',
         },
       ],
     },

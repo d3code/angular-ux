@@ -1,7 +1,7 @@
 @use "sass:map";
 
 :root {
-  color: var(--color-text);
+  color: var(--text-color);
   font-size: var(--font-size);
   font-family: var(--font-family);
   font-weight: var(--font-weight);
@@ -9,7 +9,7 @@
 }
 
 body {
-  color: var(--color-text);
+  color: var(--text-color);
   background-color: var(--background-color);
   line-height: var(--line-height);
 }

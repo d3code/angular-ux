@@ -22,6 +22,10 @@
   font-weight: 300;
 }
 
+.text-muted {
+  color: var(--muted-color);
+}
+
 @each $color, $value in $theme-color-names {
   .text-#{$color} {
     color: var(--color-#{$color});

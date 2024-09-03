@@ -107,7 +107,7 @@ import { DomSanitizer } from '@angular/platform-browser';
     .custom-file-input::before {
       text-align: center;
       content: "drag, click or press to upload a file";
-      color: var(--color-text);
+      color: var(--text-color);
       display: block;
       outline: none;
       white-space: nowrap;

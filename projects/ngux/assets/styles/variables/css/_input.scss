@@ -7,7 +7,7 @@
 :root,
 [data-color-scheme=light] {
 
-    --input-color: var(--color-text);
+    --input-color: var(--text-color);
     --input-color-disabled: #{get-color-shade("light", "gray", -50%)};
     --input-border-color: #{get-color-shade("light", "gray", -80%)};
     --input-background-color: #{get-color-shade("light", "gray", -100%)};
@@ -23,7 +23,7 @@
 
 [data-color-scheme=dark] {
 
-  --input-color: var(--color-text);
+  --input-color: var(--text-color);
   --input-color-disabled: #{get-color-shade("dark", "gray", 20%)};
   --input-border-color: #{get-color-shade("dark", "gray", 38%)};
   --input-background-color: #{get-color-shade("dark", "gray", 66%)};

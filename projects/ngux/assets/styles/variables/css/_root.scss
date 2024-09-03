@@ -9,13 +9,17 @@
 
 :root,
 [data-color-scheme=light] {
-  --color-text: #{get-color-shade("light", "gray", 30%)};
+  --text-color: #{get-color-shade("light", "gray", 30%)};
   --background-color: #{get-color-shade("light", "gray", -98%)};
-  --color-surface: #{get-color-shade("light", "gray", -85%)};
+  --surface-color: #{get-color-shade("light", "gray", -85%)};
+  --border-color: #{get-color-shade("light", "gray", -85%)};
+  --muted-color: #{get-color-shade("light", "gray", 0)};
 }
 
 [data-color-scheme=dark] {
-  --color-text: #{get-color-shade("dark", "gray", -62%)};
+  --text-color: #{get-color-shade("dark", "gray", -62%)};
   --background-color: #{get-color-shade("dark", "gray", 57%)};
-  --color-surface: #{get-color-shade("dark", "gray", 52%)};
+  --surface-color: #{get-color-shade("dark", "gray", 52%)};
+  --border-color: #{get-color-shade("dark", "gray", 62%)};
+  --muted-color: #{get-color-shade("dark", "gray", -32%)};
 }
