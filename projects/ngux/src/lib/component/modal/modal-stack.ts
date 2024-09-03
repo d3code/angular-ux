@@ -47,8 +47,8 @@ export class NgbModalStack {
 			if (this._windowCmpts.length) {
 				const activeWindowCmpt = this._windowCmpts[this._windowCmpts.length - 1];
 				ngbFocusTrap(ngZone, activeWindowCmpt.location.nativeElement, this._activeWindowCmptHasChanged);
-				this._revertAriaHidden();
-				this._setAriaHidden(activeWindowCmpt.location.nativeElement);
+				// this._revertAriaHidden();
+				// this._setAriaHidden(activeWindowCmpt.location.nativeElement);
 			}
 		});
 	}

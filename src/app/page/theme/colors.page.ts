@@ -164,7 +164,7 @@ export class ColorsPage {
           title: 'Background',
           description:
             'The background color is used for the main background color.',
-          variable: '--color-background',
+          variable: '--background-color',
         },
         {
           title: 'Surface',

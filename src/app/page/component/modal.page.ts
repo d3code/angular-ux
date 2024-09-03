@@ -19,7 +19,7 @@ import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/ico
 
     <ng-template #content let-modal>
       <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <h4 class="modal-title" id="modal-title">Profile update</h4>
         <a class="p-2" aria-label="Close" (click)="modal.dismiss('Cross click')">
           <ux-icon size="sm" name="close" [weight]="300"></ux-icon>
         </a>
@@ -39,7 +39,7 @@ export class ModalPage {
 	closeResult = '';
 
   open(content: TemplateRef<any>) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-title', animation: true }).result.then(
+		this.modalService.open(content, { animation: true }).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
 			},

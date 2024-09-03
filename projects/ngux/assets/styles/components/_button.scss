@@ -47,12 +47,15 @@ button {
     border-color: var(--button-#{$color}-border-color);
     background-color: var(--button-#{$color}-background-color);
 
-    &.active {
+    &.selected,
+    &.active,
+    &:active {
       color: var(--button-#{$color}-active-color);
       border-color: var(--button-#{$color}-active-border-color);
       background-color: var(--button-#{$color}-active-background-color);
     }
 
+    .disabled,
     &:disabled {
       color: var(--button-#{$color}-disabled-color);
       border-color: var(--button-#{$color}-disabled-border-color);
