@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout.component';
-import { AccordionPage } from './page/layout/accordion.page';
 import { CardPage } from './page/layout/card.page';
 import { ThemePage } from './page/theme/theme.page';
 import { ColorsPage } from './page/theme/colors.page';
@@ -64,10 +62,6 @@ export const routes: Routes = [
         path: 'layout',
         children: [
           {
-            path: 'accordion',
-            component: AccordionPage,
-          },
-          {
             path: 'card',
             component: CardPage,
           },
@@ -80,10 +74,6 @@ export const routes: Routes = [
       {
         path: 'component',
         children: [
-          {
-            path: 'accordion',
-            component: AccordionPage,
-          },
           {
             path: 'card',
             component: CardPage,

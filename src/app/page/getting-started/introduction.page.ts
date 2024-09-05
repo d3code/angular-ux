@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
-import { AccordionPage } from "../layout/accordion.page";
 
 @Component({
   selector: 'app-introduction',
   standalone: true,
-  imports: [CodeComponent, AccordionPage],
+  imports: [CodeComponent],
   template: `
     <h1>Introduction</h1>
     <p>Angular UX is a collection of components, directives, and pipes that can be used to build Angular applications.</p>
