@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonOptionGroupComponent } from '../../../../projects/ngux/src/lib/component/button/button-option-group.component';
+import { ButtonOptionGroupComponent } from '../../../../projects/ngux/src/lib/component/option-group/button-option-group.component';
 
 @Component({
   selector: 'app-option-group',

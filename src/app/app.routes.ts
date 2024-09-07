@@ -4,11 +4,11 @@ import { CardPage } from './page/layout/card.page';
 import { ThemePage } from './page/theme/theme.page';
 import { ColorsPage } from './page/theme/colors.page';
 import { DarkmodePage } from './page/theme/darkmode.page';
-import { IconsPage } from './page/theme/icons.page';
+import { IconsPage } from './page/component/icons.page';
 import { CodePage } from './page/theme/code.page';
-import { SheetPage } from './page/layout/sheet.page';
+import { SheetPage } from './page/component/sheet.page';
 import { ButtonPage } from './page/form/button.page';
-import { SelectPage } from './page/form/select.page';
+import { SelectPage } from './page/component/select.page';
 import { FormPage } from './page/form/form.page';
 import { IntroductionPage } from './page/getting-started/introduction.page';
 import { VariablesPage } from './page/theme/variables.page';
@@ -18,6 +18,17 @@ import { ModalPage } from './page/component/modal.page';
 import { TypographyPage } from './page/theme/typography.page';
 import { OptionGroupPage } from './page/component/option-group.page';
 import { DropdownPage } from './page/component/dropdown.page';
+import { AccordionPage } from './page/component/accordion.page';
+import { CarouselPage } from './page/component/carousel.page';
+import { CollapsePage } from './page/component/collapse.page';
+import { FileUploadPage } from './page/component/file-upload.page';
+import { PaginationPage } from './page/component/pagination.page';
+import { PopoverPage } from './page/component/popover.page';
+import { RatingPage } from './page/component/rating.page';
+import { TabsetPage } from './page/component/tabset.page';
+import { ToastPage } from './page/component/toast.page';
+import { TooltipPage } from './page/component/tooltip.page';
+import { TypeaheadPage } from './page/component/typeahead.page';
 
 export const routes: Routes = [
   {
@@ -49,10 +60,6 @@ export const routes: Routes = [
             component: TypographyPage,
           },
           {
-            path: 'icons',
-            component: IconsPage,
-          },
-          {
             path: 'variables',
             component: VariablesPage,
           },
@@ -75,12 +82,20 @@ export const routes: Routes = [
         path: 'component',
         children: [
           {
-            path: 'card',
-            component: CardPage,
+            path: 'accordion',
+            component: AccordionPage,
+          },
+          {
+            path: 'carousel',
+            component: CarouselPage,
           },
           {
             path: 'code',
             component: CodePage,
+          },
+          {
+            path: 'collapse',
+            component: CollapsePage,
           },
           {
             path: 'datepicker',
@@ -91,12 +106,32 @@ export const routes: Routes = [
             component: DropdownPage,
           },
           {
+            path: 'file-upload',
+            component: FileUploadPage,
+          },
+          {
+            path: 'icons',
+            component: IconsPage,
+          },
+          {
             path: 'modal',
             component: ModalPage,
           },
           {
-            path: 'optiongroup',
+            path: 'option-group',
             component: OptionGroupPage,
+          },
+          {
+            path: 'pagination',
+            component: PaginationPage,
+          },
+          {
+            path: 'popover',
+            component: PopoverPage,
+          },
+          {
+            path: 'rating',
+            component: RatingPage,
           },
           {
             path: 'select',
@@ -105,6 +140,22 @@ export const routes: Routes = [
           {
             path: 'sheet',
             component: SheetPage,
+          },
+          {
+            path: 'tabset',
+            component: TabsetPage,
+          },
+          {
+            path: 'toast',
+            component: ToastPage,
+          },
+          {
+            path: 'tooltip',
+            component: TooltipPage,
+          },
+          {
+            path: 'typeahead',
+            component: TypeaheadPage,
           },
         ],
       },
@@ -121,12 +172,12 @@ export const routes: Routes = [
         path: 'form',
         children: [
           {
-            path: 'button',
-            component: ButtonPage,
-          },
-          {
             path: 'form',
             component: FormPage,
+          },
+          {
+            path: 'button',
+            component: ButtonPage,
           },
         ],
       },

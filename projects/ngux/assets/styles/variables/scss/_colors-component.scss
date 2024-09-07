@@ -1,39 +1,12 @@
 @use "sass:map";
 
-$theme-color-names: (
-  "primary",
-  "secondary",
-  "success",
-  "info",
-  "warning",
-  "danger",
-  "light",
-  "dark"
-);
-
-$theme-colors: (
+$component-colors: (
   "light": (
-    "primary": get-color("light", "blue"),
-    "secondary": get-color("light", "gray"),
-    "success": get-color("light", "green"),
-    "info": get-color("light", "blue"),
-    "warning": get-color("light", "yellow"),
-    "danger": get-color("light", "red"),
+    "input": (
+      "border": get-color("light", "gray"),
+      "background": get-color("light", "gray"),
+      "text": get-color("light", "gray"),
+    ),
+    "text": get-color("light", "gray"),
   ),
-  "dark": (
-    "primary": get-color("dark", "blue"),
-    "secondary": get-color("dark", "gray"),
-    "success": get-color("dark", "green"),
-    "info": get-color("dark", "blue"),
-    "warning": get-color("dark", "yellow"),
-    "danger": get-color("dark", "red"),
-  )
 );
-
-@function get-theme-color($theme, $color) {
-  @return map-get(map-get($theme-colors, $theme), $color);
-}
-
-@function get-theme-color-shade($theme, $color, $shade) {
-  @return shift-color(get-theme-color($theme, $color), $shade);
-}

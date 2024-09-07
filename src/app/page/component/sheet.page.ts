@@ -1,6 +1,6 @@
 import { Component, inject, TemplateRef } from '@angular/core';
-import { NgbOffcanvas } from '../../../../projects/ngux/src/lib/component/offcanvas/offcanvas';
-import { OffcanvasDismissReasons } from '../../../../projects/ngux/src/lib/component/offcanvas/offcanvas-dismiss-reasons';
+import { NgbOffcanvas } from '../../../../projects/ngux/src/lib/component/sheet/offcanvas';
+import { OffcanvasDismissReasons } from '../../../../projects/ngux/src/lib/component/sheet/offcanvas-dismiss-reasons';
 
 @Component({
   selector: 'app-sheet',

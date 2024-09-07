@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuComponent } from '../menu/menu.component';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'ux-menu-layout',

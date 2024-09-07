@@ -8,7 +8,7 @@ export const ngbToastFadeInTransition: NgbTransitionStartFn = (element: HTMLElem
 		classList.add('fade');
 	} else {
 		classList.add('show');
-		return;
+		return undefined;
 	}
 
 	reflow(element);

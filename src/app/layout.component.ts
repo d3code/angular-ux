@@ -5,8 +5,8 @@ import { DarkmodeModule } from '../../projects/ngux/src/lib/component/darkmode/d
 import { IconModule } from '../../projects/ngux/src/lib/component/icon/icon.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
-import { MenuComponent } from '../../projects/ngux/src/lib/component/menu/menu.component';
-import { MenuLayoutComponent } from '../../projects/ngux/src/lib/component/layout/menu-layout.component';
+import { MenuComponent } from '../../projects/ngux/src/lib/layout/menu/menu.component';
+import { MenuLayoutComponent } from '../../projects/ngux/src/lib/layout/menu-layout.component';
 
 @Component({
   selector: 'app-layout',
@@ -65,7 +65,6 @@ export class LayoutComponent {
         { label: 'Theme', path: '/theme' },
         { label: 'Colors', path: '/colors' },
         { label: 'Dark Mode', path: '/darkmode' },
-        { label: 'Icons', path: '/icons' },
         { label: 'Typography', path: '/typography' },
         { label: 'Variables', path: '/variables' },
       ],
@@ -85,17 +84,24 @@ export class LayoutComponent {
       basePath: '/component',
       children: [
         { label: 'Accordion', path: '/accordion' },
+        { label: 'Carousel', path: '/carousel' },
         { label: 'Code', path: '/code' },
         { label: 'Collapse', path: '/collapse' },
         { label: 'Date Picker', path: '/datepicker' },
         { label: 'Dropdown', path: '/dropdown' },
+        { label: 'File Upload', path: '/file-upload' },
+        { label: 'Icons', path: '/icons' },
         { label: 'Modal', path: '/modal' },
-        { label: 'Option Group', path: '/optiongroup' },
+        { label: 'Option Group', path: '/option-group' },
+        { label: 'Pagination', path: '/pagination' },
+        { label: 'Popover', path: '/popover' },
+        { label: 'Rating', path: '/rating' },
         { label: 'Select', path: '/select' },
         { label: 'Sheet', path: '/sheet' },
-        { label: 'Tag', path: '/tag' },
+        { label: 'Tabset', path: '/tabset' },
+        { label: 'Toast', path: '/toast' },
         { label: 'Tooltip', path: '/tooltip' },
-        { label: 'Popover', path: '/popover' },
+        { label: 'Typeahead', path: '/typeahead' },
       ],
     },
     {
@@ -106,7 +112,6 @@ export class LayoutComponent {
         { label: 'Breadcrumb', path: '/breadcrumb' },
         { label: 'Menu', path: '/menu' },
         { label: 'Navbar', path: '/navbar' },
-        { label: 'Pagination', path: '/pagination' },
         { label: 'Sidebar', path: '/sidebar' },
         { label: 'Tree', path: '/tree' },
       ],
@@ -124,9 +129,6 @@ export class LayoutComponent {
         { label: 'Radio', path: '/radio' },
         { label: 'Switch', path: '/switch' },
         { label: 'Slider', path: '/slider' },
-        { label: 'Tag', path: '/tag' },
-        { label: 'Timepicker', path: '/timepicker' },
-        { label: 'Upload', path: '/upload' },
       ],
     },
     {

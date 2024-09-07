@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardModule } from '../../../../projects/ngux/src/lib/component/card/card.module';
+import { CardModule } from '../../../../projects/ngux/src/lib/layout/card/card.module';
 import { NgSelectModule } from '../../../../projects/ngux/src/lib/component/select/ng-select.module';
 
 @Component({

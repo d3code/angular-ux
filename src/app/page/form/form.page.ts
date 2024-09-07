@@ -7,7 +7,7 @@ import {
 } from '../../../../projects/ngux/src/lib/component/datepicker/datepicker.module';
 import { IconModule } from '../../../../projects/ngux/src/lib/component/icon/icon.module';
 import { FormControl, FormGroup, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ButtonOptionGroupComponent } from '../../../../projects/ngux/src/lib/component/button/button-option-group.component';
+import { ButtonOptionGroupComponent } from '../../../../projects/ngux/src/lib/component/option-group/button-option-group.component';
 import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/code.component';
 import { JsonPipe } from '@angular/common';
 
