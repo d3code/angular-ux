@@ -29,6 +29,7 @@ import { TabsetPage } from './page/component/tabset.page';
 import { ToastPage } from './page/component/toast.page';
 import { TooltipPage } from './page/component/tooltip.page';
 import { TypeaheadPage } from './page/component/typeahead.page';
+import { PastePage } from './page/component/paste.page';
 
 export const routes: Routes = [
   {
@@ -120,6 +121,10 @@ export const routes: Routes = [
           {
             path: 'option-group',
             component: OptionGroupPage,
+          },
+          {
+            path: 'paste',
+            component: PastePage,
           },
           {
             path: 'pagination',

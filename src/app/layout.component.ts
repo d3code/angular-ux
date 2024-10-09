@@ -93,6 +93,7 @@ export class LayoutComponent {
         { label: 'Icons', path: '/icons' },
         { label: 'Modal', path: '/modal' },
         { label: 'Option Group', path: '/option-group' },
+        { label: 'Paste', path: '/paste' },
         { label: 'Pagination', path: '/pagination' },
         { label: 'Popover', path: '/popover' },
         { label: 'Rating', path: '/rating' },
