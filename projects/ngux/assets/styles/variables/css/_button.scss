@@ -19,12 +19,12 @@
 :root,
 [data-color-scheme="light"] {
   --button-default-color: #{get-color-shade("light", "gray", 40%)};
-  --button-default-border-color: #{get-color-shade("light", "gray", -80%)};
-  --button-default-background-color: #{get-color-shade("light", "gray", -80%)};
+  --button-default-border-color: #{get-color-shade("light", "gray", -85%)};
+  --button-default-background-color: transparent;
 
   --button-default-hover-color: #{get-color-shade("light", "gray", 40%)};
   --button-default-hover-border-color: #{get-color-shade("light", "gray", -80%)};
-  --button-default-hover-background-color: #{get-color-shade("light", "gray", -70%)};
+  --button-default-hover-background-color: #{get-color-shade("light", "gray", -90%)};
 
   $light-theme-colors: map-get($theme-colors, "light");
   @each $color, $value in $light-theme-colors {
@@ -49,7 +49,7 @@
 [data-color-scheme="dark"] {
   --button-default-color: #{get-color-shade("dark", "gray", -60%)};
   --button-default-border-color: #{get-color-shade("dark", "gray", 40%)};
-  --button-default-background-color: #{get-color-shade("dark", "gray", 40%)};
+  --button-default-background-color: transparent;
 
   --button-default-hover-color: #{get-color-shade("dark", "gray", -60%)};
   --button-default-hover-border-color: #{get-color-shade("dark", "gray", 40%)};
