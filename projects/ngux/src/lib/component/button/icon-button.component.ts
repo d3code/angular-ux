@@ -6,33 +6,50 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { default as outlined } from './fonts/MaterialSymbolsOutlined.json';
-import { default as rounded } from './fonts/MaterialSymbolsRounded.json';
-import { default as sharp } from './fonts/MaterialSymbolsSharp.json';
+import { default as outlined } from '../icon/fonts/MaterialSymbolsOutlined.json';
+import { default as rounded } from '../icon/fonts/MaterialSymbolsRounded.json';
+import { default as sharp } from '../icon/fonts/MaterialSymbolsSharp.json';
 
 @Component({
-  selector: 'ux-icon',
+  selector: 'ux-icon-button',
   standalone: true,
   template: `
-    <span
-      [class.spin]="spin"
-      [style.font-size.rem]="sizeValue"
-      [style.transform]="'rotate(' + rotate + 'deg)'"
-      [style.font-weight]="weight"
-      [style.transition]="'transform 0.3s'"
-      [style.font-family]="fontFamiliy"
-      [style.line-height]="0"
-      [style.position]="'relative'"
-      [style.display]="'inline-flex'"
-      [style.top.rem]="topValue"
-      style="font-variation-settings: 'FILL' {{fill ? 1 : 0}}, 'wght' {{weight}}, 'GRAD' {{grade}}, 'opsz' {{opticalSizeValue}}"
+    <button
+      class="btn-icon-{{size}} btn-{{size}}"
     >
-    </span>
+      <span
+        [class.spin]="spin"
+        [style.font-size.rem]="sizeValue"
+        [style.transform]="'rotate(' + rotate + 'deg)'"
+        [style.font-weight]="weight"
+        [style.transition]="'transform 0.3s'"
+        [style.font-family]="fontFamiliy"
+        [style.line-height]="0"
+        [style.position]="'relative'"
+        [style.display]="'inline-block'"
+        [style.top.rem]="topValue"
+        style="font-variation-settings: 'FILL' {{fill ? 1 : 0}}, 'wght' {{weight}}, 'GRAD' {{grade}}, 'opsz' {{opticalSizeValue}}"
+      >
+      </span>
+    </button>
   `,
   styles: `
+    button {
+      
+    }
+
+    .btn-icon-sm {
+      padding-inline: 0.7rem;
+    }
+    .btn-icon-md {
+      padding-inline: 0.7rem;
+    }
+    .btn-icon-lg {
+      padding-inline: 0.7rem;
+    }
   `
 })
-export class IconFontComponent implements OnChanges {
+export class IconButtonComponent implements OnChanges {
   private element: HTMLElement = inject(ElementRef).nativeElement;
 
   @Input({ required: true }) name: string | undefined;
@@ -100,7 +117,7 @@ export class IconFontComponent implements OnChanges {
       throw new Error(`Icon not found: ${this.name}`);
     }
 
-    let span = this.element.firstElementChild;
+    let span = this.element.firstElementChild.firstElementChild;
     if (span) {
       span.innerHTML = '&#x' + icon + ';';
     }

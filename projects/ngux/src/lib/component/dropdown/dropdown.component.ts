@@ -10,9 +10,10 @@ import { IconModule } from '../icon/icon.module';
     <div ngbDropdown class="d-inline-block" [placement]="placement">
 			<button type="button" class="btn btn-primary" ngbDropdownToggle>
 				@if (icon) {
-					<ux-icon [name]="icon" />				
+					<ux-icon class="ml-1" [name]="icon" />
 				}
-				{{title}}
+				<span class="ml-3 mr-1">{{title}}</span>
+				<ux-icon name="arrow_drop_down" />
 			</button>
 			<div ngbDropdownMenu>
 				@for (item of items; track item) {

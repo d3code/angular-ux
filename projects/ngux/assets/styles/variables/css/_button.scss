@@ -3,17 +3,17 @@
 :root {
   --button-border-radius: #{$border-radius};
 
-  --button-sm-font-size: 0.9rem;
-  --button-sm-padding-x: 0.8rem;
+  --button-sm-font-size: 0.831rem;
+  --button-sm-padding-x: 0.6rem;
   --button-sm-padding-y: 0.3rem;
 
   --button-md-font-size: 1rem;
-  --button-md-padding-x: 1rem;
-  --button-md-padding-y: 0.4rem;
+  --button-md-padding-x: 0.7rem;
+  --button-md-padding-y: 0.405rem;
 
   --button-lg-font-size: 1.2rem;
-  --button-lg-padding-x: 1.2rem;
-  --button-lg-padding-y: 0.4rem;
+  --button-lg-padding-x: 0.8rem;
+  --button-lg-padding-y: 0.58rem;
 }
 
 :root,
@@ -32,12 +32,12 @@
     --button-#{$color}-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-background-color: #{shift-color($value, 0%)};
 
-    --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};
+    --button-#{$color}-disabled-color: #{shift-color($value, -75%)};
     --button-#{$color}-disabled-border-color: #{shift-color($value, -35%)};
     --button-#{$color}-disabled-background-color: #{shift-color($value, -35%)};
 
     --button-#{$color}-active-color: #{contrast-color($value, #333, #fff)};
-    --button-#{$color}-active-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-active-border-color: #{shift-color($value, 30%)};
     --button-#{$color}-active-background-color: #{shift-color($value, 20%)};
 
     --button-#{$color}-hover-color: #{contrast-color($value, #333, #fff)};
@@ -61,16 +61,16 @@
     --button-#{$color}-border-color: #{shift-color($value, 0%)};
     --button-#{$color}-background-color: #{shift-color($value, 0%)};
 
-    --button-#{$color}-disabled-color: #{contrast-color($value, #333, #fff)};
-    --button-#{$color}-disabled-border-color: #{shift-color($value, 0%)};
+    --button-#{$color}-disabled-color: #{shift-color($value, 76%)};
+    --button-#{$color}-disabled-border-color: #{shift-color($value, 40%)};
     --button-#{$color}-disabled-background-color: #{shift-color($value, 50%)};
 
     --button-#{$color}-active-color: #{contrast-color($value, #333, #fff)};
     --button-#{$color}-active-border-color: #{shift-color($value, 0%)};
-    --button-#{$color}-active-background-color: #{shift-color($value, -20%)};
+    --button-#{$color}-active-background-color: #{shift-color($value, 30%)};
 
     --button-#{$color}-hover-color: #{contrast-color($value, #333, #fff)};
-    --button-#{$color}-hover-border-color: #{shift-color($value, 10%)};
+    --button-#{$color}-hover-border-color: #{shift-color($value, 20%)};
     --button-#{$color}-hover-background-color: #{shift-color($value, 10%)};
   }
 }

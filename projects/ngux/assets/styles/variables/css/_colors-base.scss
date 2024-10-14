@@ -1,8 +1,6 @@
 @use "sass:map";
 
 $light-variation-offsets: map-get($variation-offsets, "light");
-$dark-variation-offsets: map-get($variation-offsets, "dark");
-
 :root,
 [data-color-scheme=light] {
 
@@ -15,6 +13,7 @@ $dark-variation-offsets: map-get($variation-offsets, "dark");
   }
 }
 
+$dark-variation-offsets: map-get($variation-offsets, "dark");
 [data-color-scheme=dark] {
 
   @each $color, $value in $colors {

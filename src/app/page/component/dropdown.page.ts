@@ -10,7 +10,10 @@ import { DropdownComponent } from '../../../../projects/ngux/src/lib/component/d
   template: `
     <h1>Dropdown</h1>
 
-		<ux-dropdown icon="person" title="Dropdown" placement="bottom-right" [items]="items" />
+		<ux-dropdown class="display-block mb-2" icon="person" title="Dropdown" placement="bottom-left" [items]="items" />
+
+
+		<ux-dropdown title="Dropdown" placement="bottom-left" [items]="items" />
   `,
   styles: ``
 })

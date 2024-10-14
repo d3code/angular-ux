@@ -1,8 +1,8 @@
 hr {
-  /* Add the correct box sizing in Firefox */
-  box-sizing: content-box;
-  height: 0;
-  
-  /* Show the overflow in Edge and IE */
-  overflow: visible;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--hr-color);
+
+  padding-top: var(--hr-padding);
+  margin-bottom: var(--hr-padding);
 }

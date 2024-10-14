@@ -78,15 +78,15 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
       <div class="example">
         <button class="btn btn-sm btn-primary">Small</button>
         <button class="btn btn-sm btn-primary">
-          <ux-icon name="menu" size="sm"></ux-icon>
+          <ux-icon name="add_circle" size="sm"></ux-icon>
         </button>
         <button class="btn btn-primary">Medium</button>
         <button class="btn btn-primary">
-          <ux-icon name="menu"></ux-icon>
+          <ux-icon name="add_circle"></ux-icon>
         </button>
         <button class="btn btn-lg btn-primary">Large</button>
         <button class="btn btn-lg btn-primary">
-          <ux-icon name="menu" size="lg"></ux-icon>
+          <ux-icon name="add_circle" size="lg"></ux-icon>
         </button>
       </div>
     </div>
@@ -102,8 +102,6 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
         <li>Warning: The warning button color.</li>
         <li>Danger: The danger button color.</li>
         <li>Info: The info button color.</li>
-        <li>Light: The light button color.</li>
-        <li>Dark: The dark button color.</li>
       </ul>
 
       <div class="example">
@@ -113,8 +111,6 @@ import { CodeComponent } from '../../../../projects/ngux/src/lib/component/code/
         <button class="btn btn-warning">Warning</button>
         <button class="btn btn-danger">Danger</button>
         <button class="btn btn-info">Info</button>
-        <button class="btn btn-light">Light</button>
-        <button class="btn btn-dark">Dark</button>
       </div>
 
       <ux-code [code]="buttonThemes"></ux-code>
@@ -157,7 +153,5 @@ export class ButtonPage {
 <button class="btn btn-success">Success</button>
 <button class="btn btn-warning">Warning</button>
 <button class="btn btn-danger">Danger</button>
-<button class="btn btn-info">Info</button>
-<button class="btn btn-light">Light</button>
-<button class="btn btn-dark">Dark</button>`
+<button class="btn btn-info">Info</button>`
 }

@@ -30,6 +30,7 @@ import { ToastPage } from './page/component/toast.page';
 import { TooltipPage } from './page/component/tooltip.page';
 import { TypeaheadPage } from './page/component/typeahead.page';
 import { PastePage } from './page/component/paste.page';
+import { IconButtonPage } from './page/form/icon-button.page';
 
 export const routes: Routes = [
   {
@@ -113,6 +114,10 @@ export const routes: Routes = [
           {
             path: 'icons',
             component: IconsPage,
+          },
+          {
+            path: 'icon-button',
+            component: IconButtonPage,
           },
           {
             path: 'modal',

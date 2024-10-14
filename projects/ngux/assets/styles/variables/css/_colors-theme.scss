@@ -1,8 +1,6 @@
 @use "sass:map";
 
 $light-theme-colors: map-get($theme-colors, "light");
-$dark-theme-colors: map-get($theme-colors, "dark");
-
 :root,
 [data-color-scheme=light] {
   @each $color, $value in $light-theme-colors {
@@ -10,6 +8,7 @@ $dark-theme-colors: map-get($theme-colors, "dark");
   }
 }
 
+$dark-theme-colors: map-get($theme-colors, "dark");
 [data-color-scheme=dark] {
   @each $color, $value in $dark-theme-colors {
     --color-#{$color}: #{$value};

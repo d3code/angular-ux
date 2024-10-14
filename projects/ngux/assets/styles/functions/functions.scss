@@ -2,7 +2,7 @@
 
 // Tint a color: mix a color with white
 @function tint-color($color, $weight) {
-  @return mix(white, $color, $weight);
+  @return mix(white, $color, $weight * 1%);
 }
 
 // Shade a color: mix a color with black
@@ -20,10 +20,6 @@
 }
 
 @mixin background-opacity($color, $opacity: 0.3) {
-  background: $color; /* The Fallback */
+  background: $color;
   background: rgba($color, $opacity);
-}
-
-element {
-   @include background-opacity(#333, 0.5);
 }

@@ -5,6 +5,7 @@
 button {
 
   border-radius: var(--button-border-radius);
+  display: inline-flex;
 
   color: var(--button-default-color);
   background-color: var(--button-default-background-color);

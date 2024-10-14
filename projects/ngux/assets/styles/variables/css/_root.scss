@@ -5,6 +5,7 @@
   --font-size: #{$font-size};
   --font-weight: #{$font-weight};
   --line-height: #{$line-height};
+  --hr-padding: #{$hr-padding};
 }
 
 :root,
@@ -14,12 +15,14 @@
   --surface-color: #{get-color-shade("light", "gray", -85%)};
   --border-color: #{get-color-shade("light", "gray", -85%)};
   --muted-color: #{get-color-shade("light", "gray", 0)};
+  --hr-color: #{get-color-shade("light", "gray", -85%)};
 }
 
 [data-color-scheme=dark] {
   --text-color: #{get-color-shade("dark", "gray", -62%)};
-  --background-color: #{get-color-shade("dark", "gray", 57%)};
+  --background-color: #{get-color-shade("dark", "gray", 78%)};
   --surface-color: #{get-color-shade("dark", "gray", 52%)};
   --border-color: #{get-color-shade("dark", "gray", 62%)};
   --muted-color: #{get-color-shade("dark", "gray", -32%)};
+  --hr-color: #{get-color-shade("light", "gray", 52%)};
 }
